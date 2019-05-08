@@ -235,9 +235,6 @@
   </section>
   <script src="swiper.js"></script>
   <script>
-    var body = window.document.body;
-
-    if (body.clientWidth <= 1500) {
       var swiper = new Swiper('.swiper-container', {
          slidesPerView: 3,
          spaceBetween: 10,
@@ -256,90 +253,7 @@
             prevEl: '.swiper-button-prev',
           },
        });
-      } 
-
-    if (body.clientWidth <= 1200) {
-      var swiper = new Swiper('.swiper-container', {
-         slidesPerView: 3,
-         spaceBetween: 10,
-         loop: true,
-         autoplay: {
-              delay: 2500,
-              disableOnInteraction: false,
-          },
-
-         pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-       });
-      } 
-
-    if (body.clientWidth <= 992) {
-      var swiper = new Swiper('.swiper-container', {
-         slidesPerView: 3,
-         spaceBetween: 10,
-         loop: true,
-         autoplay: {
-              delay: 2500,
-              disableOnInteraction: false,
-          },
-
-         pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-       });
-      } 
-
-    if (body.clientWidth <= 768) {
-      var swiper = new Swiper('.swiper-container', {
-         slidesPerView: 2,
-         spaceBetween: 10,
-         loop: true,
-         autoplay: {
-              delay: 2500,
-              disableOnInteraction: false,
-          },
-
-         pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-       });
-      } 
-      if (body.clientWidth <= 567) {
-      var swiper = new Swiper('.swiper-container', {
-         slidesPerView: 1,
-         spaceBetween: 10,
-         loop: true,
-         autoplay: {
-              delay: 2500,
-              disableOnInteraction: false,
-          },
-
-         pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-       });
-      } 
+    
   </script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
