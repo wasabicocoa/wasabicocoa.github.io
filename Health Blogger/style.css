@@ -1,0 +1,247 @@
+:root {
+	--light-pink: #ffe4e1;
+	--pink: #ffaeae;
+	--light-brown: #a97777;
+	--dark-brown: #514242;
+	--light-blue: #ccf4f1;
+}
+
+.mt-6 { margin-top: 6rem !important; }
+
+h5 {
+	background-color: var(--light-brown);
+	color: var(--light);
+	font-weight: 700;
+	display: inline;
+	text-transform: uppercase;
+	padding: 10px;
+	font-size: 0.9em;
+}
+
+.btn-h {
+	border-radius: 0;
+}
+/*----------------
+--Container
+------------------*/
+
+.container {
+	max-width: 100%;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+	.container {
+		max-width: calc(1600px + 20%);
+		margin: 0 auto;
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}
+
+/*---------------
+--Navbar
+---------------*/
+.navbar {
+	background-color: white;
+}
+
+.dropdown-menu ul {
+	padding: 0;
+	margin: 0;
+}
+
+.dropdown-item a {
+	color: var(--dark);
+	padding: 5px 0;
+	display: block;
+}
+
+.dropdown-menu.show {
+	display: block;
+	top: 100%;
+	opacity: 1;
+	visibility: visible;
+}
+.navbar-brand { max-width: 70%; }
+
+@media only screen and (min-width: 768px ) {
+	.navbar {
+		padding: 0;
+	}
+
+	.nav-link {
+		padding: 15px;
+	}
+	.dropdown-menu {
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+		top: 110%;
+		-webkit-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out; 
+	}
+	.dropdown-menu.show {
+		display: block;
+		top: 100%;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.navbar-brand { width: 300px; }
+}
+
+/*--------------
+--scroll-to-top
+---------------*/
+.scrolltop {
+	position: fixed;
+	top: auto;
+	bottom: 20px;
+	left: auto;
+	right: 20px;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1040;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.scrolltop:hover {
+	cursor: pointer;
+}
+.scroll-fade {
+	opacity: 1;
+	visibility: visible;
+}
+.scroll-icon {
+	background-color: var(--dark-brown);
+	padding: 5px 15px;
+	border-radius: 50%;
+}
+.scroll-icon .fa-angle-up {
+	color: var(--light);
+}
+
+/*---------------
+--Swiper
+----------------*/
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+      /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+	.swiper-item {
+		position: relative;
+	}
+		.swiper-item a {
+			color: var(--light);
+			font-weight: 600;
+		}
+
+		.swiper-item:hover img {
+			opacity: 0.9;
+		}
+
+	.swiper-item-overlay {
+		position: absolute;
+		top: auto;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 20px;
+		background-color: rgba(169,119,119, 0.7);
+	}
+
+.swiper-pagination-bullet-active {
+	background: #fff;
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+	bottom: 0px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+	width: 50px;
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 30px;
+	border-radius: 50%;
+}
+
+/*---------------
+--Posts
+---------------*/
+
+.item-h h3 {
+	font-weight: 600;
+}
+
+.item-h-img {
+	border-bottom: 10px transparent solid;
+}
+	.item-h-img:hover {
+		opacity: 0.9;
+		border-bottom: 10px var(--dark-brown) solid;
+	}
+
+.item-h-p a {
+	color: var(--dark);
+}
+	.item-h-p a:hover {
+		opacity: 0.9;
+	}
+/*-------------
+--Info
+--------------*/
+
+.b-img {
+	max-width: 30%;
+	float: right;
+}
+.ba-img {
+	max-width: 30%;
+	float: right;
+	padding: 15px;
+}
+.info-d {
+	background-color: var(--dark-brown);
+	color: var(--light);
+	text-align: center;
+	font-weight: 600;
+	font-size: 20px;
+	padding: 1.1rem;
+}
+
+	.info-d .fab {
+		color: var(--light);
+	}
+	.info-d .fab:hover {
+		opacity: 0.7;
+	}
+
+@media only screen and (min-width: 992px) {
+	.b-img {
+		max-width: 100%;
+		float: none;
+	}
+}
+
