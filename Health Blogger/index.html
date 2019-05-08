@@ -256,7 +256,27 @@
             prevEl: '.swiper-button-prev',
           },
        });
-      } 
+      } else {
+        var swiper = new Swiper('.swiper-container', {
+         slidesPerView: 2,
+         spaceBetween: 10,
+         loop: true,
+         autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+          },
+
+         pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+       });
+      }
+
     if (body.clientWidth <= 1200) {
       var swiper = new Swiper('.swiper-container', {
          slidesPerView: 3,
@@ -276,7 +296,27 @@
             prevEl: '.swiper-button-prev',
           },
        });
-      } 
+      } else {
+        var swiper = new Swiper('.swiper-container', {
+         slidesPerView: 2,
+         spaceBetween: 10,
+         loop: true,
+         autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+          },
+
+         pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+       });
+      }
+
     if (body.clientWidth <= 992) {
       var swiper = new Swiper('.swiper-container', {
          slidesPerView: 3,
@@ -296,7 +336,27 @@
             prevEl: '.swiper-button-prev',
           },
        });
+      } else {
+        var swiper = new Swiper('.swiper-container', {
+         slidesPerView: 2,
+         spaceBetween: 10,
+         loop: true,
+         autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+          },
+
+         pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+       });
       }
+      
     if (body.clientWidth <= 768) {
       var swiper = new Swiper('.swiper-container', {
          slidesPerView: 2,
