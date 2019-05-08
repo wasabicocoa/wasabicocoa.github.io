@@ -338,7 +338,7 @@
        });
       } else {
         var swiper = new Swiper('.swiper-container', {
-         slidesPerView: 2,
+         slidesPerView: 1,
          spaceBetween: 10,
          loop: true,
          autoplay: {
@@ -376,7 +376,26 @@
             prevEl: '.swiper-button-prev',
           },
        });
-      } 
+      } else {
+        var swiper = new Swiper('.swiper-container', {
+         slidesPerView: 1,
+         spaceBetween: 10,
+         loop: true,
+         autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+          },
+
+         pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+       });
+      }
       if (body.clientWidth <= 567) {
       var swiper = new Swiper('.swiper-container', {
          slidesPerView: 1,
@@ -396,7 +415,26 @@
             prevEl: '.swiper-button-prev',
           },
        });
-      } 
+      } else {
+        var swiper = new Swiper('.swiper-container', {
+         slidesPerView: 1,
+         spaceBetween: 10,
+         loop: true,
+         autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+          },
+
+         pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+       });
+      }
   </script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
