@@ -1,0 +1,31 @@
+Features for each template include.
+
+Bootstrap 4 framework, Swiper, and AOS.
+
+All Bootstrap 4 guidelines, copyright, and documentation can be found here 
+https://getbootstrap.com/
+
+All Swiper guidelines, copyright, and documentation can be found here 
+https://idangero.us/swiper/get-started/
+
+All AOS guidelines, copyright, and documentation can be found here 
+https://michalsnik.github.io/aos/
+
+********
+
+The CSS
+
+Tags with classes such as content will be have a class of content-h (content home) and pages would be content-p (content-page). This includes header classes, button class etc. Universal classes will not have this style.
+
+Some containers are custom made and are not the standard Bootstrap 4 container. To remove this container, just comment it out from the style.css (This is recommended for the purpose of the layout. Do not delete it.)
+
+In the style.css, the styles are in sections with a “title” to easily understand, locate, and re-style without having to dig through the stylesheet. 
+
+********
+
+The Markup
+
+Each section of the page will have a seperate container from the other sections making it easy to add or remove sections at will. The tages are placed to support the Bootstrap 4 framework.
+
+Each section has a generic “title” to easily understand, locate, duplicate, or change without the hassle of a large unorganized markup.
+
