@@ -1,0 +1,340 @@
+/*----------------
+--Container
+------------------*/
+
+.container {
+	max-width: 100%;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+	.container {
+		max-width: calc(1600px + 10%);
+		margin: 0 auto;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+/*-------------------
+--Header
+--------------------*/
+.head {
+	position: absolute;
+	top: 0;
+	bottom: auto;
+	left: 0;
+	right: 0;
+	z-index: 1030;
+}
+.head .logo {
+	width: 100px;
+}
+.social-head-container {
+	position: relative;
+}
+.social-head a {
+	color: var(--light);
+}
+	.social-head a:hover {
+		color: var(--light);
+		opacity: 0.7;
+	}
+.social-head li {
+	padding: 15px 5%;
+}
+
+.head-list {
+	text-align: right;
+}
+@media only screen and (max-width:780px) {
+	.social-head li {
+		padding: 15px 5px;
+	}
+}
+@media only screen and (max-width:767px) {
+	.head {
+		position: relative;
+		background-color: var(--dark);
+	}
+	.social-head-container {
+		position: absolute;
+	}
+	.social-head {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 30%;
+		right: 0;
+	}
+}
+@media only screen and (max-width: 576px) {
+	.head-list {
+		text-align: left;
+	}
+}
+/*------------------
+--Navbar
+------------------*/
+.navbar {
+	padding: 0;
+}
+.navbar > .container, .navbar > .container-fluid {
+	padding: 0;
+}
+.nav.ml-auto {
+        margin-left: 0!important;
+}
+.nav-link {
+	padding: 15px 0;
+	position: relative;
+}
+.nav-link::before {
+	content: "";
+	width: 0%;
+	transition: all 0.3s ease-in-out;
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: auto;
+	left: 50%;
+	right: 0;
+	height: 1px;
+	background-color: var(--light);
+}
+.nav-link {
+	color: var(--light);
+}
+	.nav-link:hover {
+		color: var(--light);
+		opacity: 0.78;
+	}
+.nav-link:hover::before {
+	width: 100%;
+	left: 0%;
+}
+.nav-link.active::before {
+	content: "";
+	width: 100%;
+	transition: all 0.3s ease-in-out;
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: auto;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background-color: var(--light);
+}
+.dropdown-menu ul {
+	padding: 0;
+	margin: 0;
+}
+
+.b-nav {
+	border-top: rgba(248,249,250, 0.4)  thin solid;
+}
+
+.fixed-nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+	background-color: var(--dark);
+	transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-toggler {
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+@media only screen and (max-width:767px) {
+	.navbar {
+		padding: 15px;
+	}
+	.nav-link:hover::before {
+		width: 0;
+	}
+	.nav-link.active::before {
+		width: 0;
+	}
+}
+/*----------------
+--Swiper
+-----------------*/
+.swiper-caption {
+	display: block !important;
+	top: 0!important;
+    background-color: transparent !important;
+}
+.swiper-caption::before {
+	position: absolute;
+	content: "";
+	bottom: 0;
+	left: 0;
+	right: 0;
+    top: 0;
+    background: linear-gradient(var(--info), var(--primary));
+    background-color: transparent !important;
+    opacity: 0.4;
+}
+
+.swiper-caption h3 {
+	position: absolute;
+	top: 30%;
+	bottom: 0;
+	left: 5%;
+	right: auto;
+	font-size: 3rem;
+}
+
+.swiper-caption p {
+	position: absolute;
+	top: 40%;
+	bottom: 0;
+	left: 5%;
+	right: auto;
+	font-size: 1.5rem;
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+	left: 5%!important;
+	right: auto;
+	top: 50%;
+	text-align: left;
+}
+.swiper-pagination-bullet {
+	width: 15px!important;
+	height: 15px!important;
+}
+.swiper-button-white {
+	display: none;
+}
+.swiper-pagination-bullet-active {
+	background: #fff !important;
+}
+@media only screen and (max-width:992px) {
+	.swiper-caption h3 {
+		top: 40%;
+	}
+
+	.swiper-caption p {
+		top: 50%;
+	}
+	.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+		top: 60%;
+	}
+}
+@media only screen and (max-width:770px) {
+	.swiper-caption h3 {
+		top: 52%;
+	}
+
+	.swiper-caption p {
+		top: 68%;
+	}
+	.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+		top: 82%;
+	}
+}
+@media only screen and (max-width:767px) {
+		
+        .swiper-caption {
+          display: block!important;
+          position: relative!important;
+          background-color: var(--dark) !important;
+        }
+        .swiper-caption h3 {
+			position: relative;
+			top: 0;
+			left: 0;
+		}
+		.swiper-caption p {
+			position: relative;
+			top: 0;
+			left: 0;
+		}
+		.swiper-button-white {
+			display: block;
+		}
+		.swiper-pagination {
+			text-align: center!important;
+			top: auto!important;
+			bottom: 0;
+		}
+		.swiper-pagination-bullet {
+			width: 8px!important;
+			height: 8px!important;
+		}
+    }
+/*------------------
+--Jumbotron
+-------------------*/
+.jumbotron {
+	position: relative;
+	background: url('site/slide-3.jpg');
+	color: var(--light);
+	padding: 4rem 0;
+	z-index: 5;
+	border-radius: 0;
+}
+	.jumbotron::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		background: linear-gradient(var(--info), var(--primary));
+		opacity: 0.4;
+	}
+.jumbotron h1 {
+	position: relative;
+	margin-top: 80px;
+	z-index: 20;
+}
+@media only screen and (max-width:768px) {
+	.jumbotron {
+		padding: 2rem 0;
+	}
+	.jumbotron h1 {
+		margin-top: 0px;
+	}
+}
+/*-----------------
+--Footer
+-----------------*/
+.bg-black {
+	background-color: black;
+}
+.foot ul {
+	padding: 0;
+	margin: 0;
+}
+.foot li {
+	padding: 5px 0;
+	list-style: none;
+}
+.foot .links li {
+	padding: 15px 0;
+	border-bottom: rgba(248,249,250, 0.4)  thin solid;
+	list-style: none;
+}
+
+.foot a {
+	color: var(--light);
+}
+	.foot a:hover {
+		color: var(--light);
+		opacity: 0.7;
+	}
+.foot .btn-outline-light:hover {
+	color: var(--dark) !important;
+}

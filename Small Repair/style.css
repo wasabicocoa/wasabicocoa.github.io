@@ -1,0 +1,267 @@
+:root {
+	--green: #00B19F;
+	--blue: #3089C5;
+	--dark-blue: #155F81;
+	--light-blue: #EAF2F5;
+	--orange: #FC7524;
+	--darkish: #383F43;
+	--dark-text: #162B38;
+	--gray: #F6F6F6;
+	--dark-gray: #E0E0E0;
+}
+
+.btn-blue {
+	background-color: var(--blue);
+	color: var(--light);	
+	border-radius: 0px;
+	padding: 12px 18px;
+	font-size: 1.1rem;
+}
+
+	.btn-blue:hover {
+		background-color: var(--dark-blue);
+		color: var(--light);
+	}
+.btn-green {
+	background-color: var(--green);
+	color: var(--light);	
+	border-radius: 0px;
+	padding: 12px 18px;
+	font-size: 1.1rem;
+}
+
+	.btn-green:hover {
+		color: var(--light);
+		opacity: 0.7;
+	}
+
+
+/*-------------
+--Top-Info
+--------------*/
+
+.top-info {
+	background-color: var(--darkish);
+	color: var(--light);
+	padding: 0.8rem;
+	font-size: 0.9rem;
+}
+	.top-info a {
+		color: var(--light);
+	}
+		.top-info a:hover {
+			color: var(--light);
+			opacity: 0.7;
+		}
+	.top-info ul {
+		margin-bottom: 0;
+	}
+
+.top-arrow {
+	display: none;
+	text-align: center;
+}
+.top-arrow-off {
+	display: none;
+	text-align: center;
+}
+.top-info .fas {
+	color: var(--light);
+	
+}
+.btn-arrow .fas {
+	font-size: 1.8rem;
+}
+.btn-arrow {
+	background-color: transparent;
+	border: 0px;
+}
+.clickDown {
+	position: relative !important;
+	margin-top: 0px !important;
+}
+
+.top-info .container {
+	max-width: 100%;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+@media only screen and (min-width: 768px) {
+	.top-info .container {
+		max-width: calc(1600px + 10%);
+		margin: 0 auto;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+@media only screen and (max-width:768px) {
+	.top-arrow {
+		display: block;
+	}
+	.top-info-item {
+		position: relative;
+		margin-top: -52px;
+		transition: all 0.3s ease-in-out;
+	}
+	.show {
+		display: block;
+	}
+	.hidden {
+		display: none;
+	}
+}
+@media only screen and (max-width:435px) {
+	.top-info-item {
+		margin-top: -75px;
+	}
+}
+@media only screen and (max-width: 305px) {
+	.top-info-item {
+		margin-top: -100px;
+	}
+}
+
+/*----------------
+--Navbar
+----------------*/
+
+.navbar-brand img {
+	max-width: 100%;
+	width: 100px;
+}
+.nav-link {
+	text-transform: uppercase;
+	color: var(--light) !important;
+	border-bottom: transparent thin solid;
+}
+	.nav-link:hover {
+		opacity: 0.7;
+	}
+	.nav-link.active {
+		border-bottom: var(--light) thin solid;
+	}
+.bg-blue {
+	background-color: var(--blue);
+}
+.dropdown-menu ul {
+	padding: 0;
+	margin: 0;
+}
+.navbar {
+	border-bottom: var(--dark-blue) 3px solid;
+}
+.navbar .container {
+	max-width: 100%;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+@media only screen and (min-width: 768px) {
+	.navbar .container {
+		max-width: calc(1600px + 10%);
+		margin: 0 auto;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+/*--------------------
+--Header/Jumbotron
+--------------------*/
+
+.jumbotron {
+	position: relative;
+	background: url('site/jumbo.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin-bottom: 0;
+}
+.j-item {
+	position: relative;
+	z-index: 15;
+	color: var(--light);
+}
+.jumbotron::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-image: linear-gradient(to right, var(--darkish), transparent);
+	opacity: 0.9;
+	z-index: 10;
+}
+
+/*--------------
+--Main Content
+---------------*/
+
+.main {
+	color: var(--dark-text);
+}
+
+/*----------------
+--Section-1
+-----------------*/
+
+.section-1 {
+	background-color: var(--gray);
+	border-bottom: var(--dark-gray) thin solid;
+}
+.section-1 ul {
+	margin: 0;
+	padding: 10px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.section-1 ul img {
+	width: 150px;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  	filter: grayscale(100%);
+}
+
+/*----------------
+--Section-2
+----------------*/
+
+.section-2 {
+	background-color: var(--light-blue);
+	border: var(--dark-gray) thin solid;
+	color: var(--dark-text);
+	padding: 25px 0;
+}
+
+/*----------------
+--Footer
+-----------------*/
+
+.foot {
+	background-color: var(--darkish);
+	color: var(--light);
+	padding: 20px 0 0 0;
+}
+
+	.foot a {
+		color: var(--light);
+	}
+		.foot a:hover {
+			color: var(--light);
+			opacity: 0.7;
+		}
+.login-foot {
+	background-color: black;
+	padding: 10px 0 20px 0;
+}
+/*----------------
+--Layout Media
+-----------------*/
+
+@media only screen and (max-width:786px) {
+	.w-50 {
+		width: 100% !important;
+	}
+}

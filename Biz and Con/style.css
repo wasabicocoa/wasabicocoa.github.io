@@ -1,0 +1,195 @@
+:root {
+	--light-blue: #00BCD4;
+	--grayish: #F4F6F7;
+	--purple: #663E50;
+}
+
+.bg-white {
+	background-color: white;
+}
+
+/*--------------
+--Header
+--------------*/
+
+.head {
+	border-top: var(--light-blue) 4px solid;
+}
+
+.top-head {
+	background-color: var(--grayish);
+	border-bottom: #DFE5E8 thin solid;
+	padding: 8px;
+}
+	.top-head a {
+		color: var(--dark);
+	}
+		.top-head a:hover {
+			color: var(--dark);
+			opacity: 0.7;
+		}
+	.top-head ul {
+		margin: 0;
+	}
+
+.logo img {
+	width: 200px;
+	max-width: 100%;
+	padding: 15px 0;
+}
+
+/*------Hide/Show Arrows-------*/
+.top-arrow {
+	display: none;
+	text-align: center;
+}
+.top-arrow-off {
+	display: none;
+	text-align: center;
+}
+.top-info .fas {
+	color: var(--light);
+	
+}
+.btn-arrow .fas {
+	font-size: 1.8rem;
+}
+.btn-arrow {
+	background-color: transparent;
+	border: 0px;
+}
+.clickDown {
+	position: relative !important;
+	margin-top: 0px !important;
+}
+
+@media only screen and (max-width:768px) {
+	.top-arrow {
+		display: block;
+	}
+	.top-info-item {
+		position: relative;
+		margin-top: -76px;
+		transition: all 0.3s ease-in-out;
+	}
+	.show {
+		display: block;
+	}
+	.hidden {
+		display: none;
+	}
+}
+@media only screen and (max-width:576px) {
+	.top-info-item {
+		margin-top: -100px;
+	}
+}
+@media only screen and (max-width:475px) {
+	.top-info-item {
+		margin-top: -123px;
+	}
+}
+@media only screen and (max-width: 335px) {
+	.top-info-item {
+		margin-top: -146px;
+	}
+}
+
+
+/*----------------
+--Navbar 
+----------------*/
+.navbar {
+	border-bottom: var(--light-blue) thin solid;
+}
+.navbar .dropdown-menu ul {
+	padding: 0;
+	margin: 0;
+}
+.nav-link {
+	color: var(--purple)!important;
+	font-weight: 600;
+	border-bottom: transparent thin solid;
+	text-transform: uppercase;
+}
+	.nav-link:hover {
+		opacity: 0.7;
+		border-bottom: var(--light-blue) thin solid;
+	}
+.nav-link.active {
+	border-bottom: var(--light-blue) thin solid;
+}
+	.nav-link.active:hover {
+		color: var(--light-blue)!important;
+	}
+
+.navbar-expand-md .navbar-collapse {
+	justify-content: center;
+}
+
+.fixed-nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+}
+
+.b-nav {
+	border-bottom: var(--light-blue)  thin solid;
+}
+
+/*-------------------
+--Swiper - Carousel
+--------------------*/
+.swiper-caption {
+      background-color: rgba(0,0,0, 0.5)!important;
+    }
+
+/*----------------
+--Main
+----------------*/
+
+.main {
+
+}
+
+/*-------------
+--Section-1
+-------------*/
+
+.section-1 {
+	background-color: var(--grayish);
+	border-top: var(--light-blue) thin solid;
+	padding: 0 0 1.4rem 0;
+}
+
+/*------------
+--Footer
+------------*/
+
+.foot {
+	padding: 1.5rem 0 0 0;
+	background-color: var(--purple);
+	color: var(--light);
+}
+	.foot a {
+		color: var(--light);
+	}
+		.foot a:hover {
+			color: var(--light);
+			opacity: 0.7;
+		}
+
+	.foot li {
+		padding: 8px 0;
+		list-style: none;
+		border-bottom: var(--light) thin solid;
+	}
+		.foot li a {
+			display: block;
+		}
+.foot-copy {
+	background-color: black;
+	padding: 1.4rem 0;
+}

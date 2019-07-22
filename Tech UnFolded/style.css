@@ -1,0 +1,232 @@
+:root {
+	--blue: #177e89;
+	--dark-blue: #084c61;
+	--redish: #db3a34;
+	--yellow: #ffc857;
+	--darkish: #323031;
+	--light-gray: #e5e5e5;
+}
+
+/*-------------------------
+--Header/Navbar Container
+--------------------------*/
+
+.head.container, .navbar .container {
+	max-width: 100%;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+	.head.container, .navbar .container {
+		max-width: calc(1600px + 10%);
+		margin: 0 auto;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+/*--------------
+--Navbar
+---------------*/
+
+.navbar {
+	padding: 0;
+	border-bottom: var(--blue) thin solid;
+}
+.navbar .ml-auto {
+	margin-left: 0!important;
+}
+.navbar-brand img {
+	width: 150px;
+	max-width: 100%;
+}
+.nav-link {
+	padding: 20px 10px;
+}
+	.nav-link.active {
+		background-color: var(--blue);
+		color: var(--light)!important;
+	}
+
+.navbar .dropdown-menu ul {
+	padding: 0;
+	margin: 0;
+}
+
+/*--------------
+--Header
+---------------*/
+
+.jumbotron {
+	background: url('site/tmp1.jpg');
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	border-radius: 0;
+	min-height: 500px;
+	padding-top: 15%;
+	margin: 0;
+}
+.jumbo-d {
+	background: url('site/tmp10.jpg');
+	min-height: 200px;
+	padding-top: 5%;
+}
+.jumbo-item {
+	position: relative;
+	z-index: 10;
+}
+.jumbo {
+	position: relative;
+}
+.jumbo::before {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--darkish);
+	opacity: 0.3;
+	z-index: 5;
+}
+.jumbo h1 {
+	color: var(--light);
+	text-shadow: 0 5px 10px black;
+	font-family: sans-serif;
+	font-size: 3rem;
+	font-weight: 600;
+}
+.jumbo p {
+	color: var(--light);
+	text-shadow: 0 5px 10px black;
+}
+
+a.h-btn {
+	background-color: var(--darkish);
+	color: var(--light);
+	border-radius: 0;
+}
+	a.h-btn:hover {
+		background-color: var(--dark);
+		color: var(--light);
+	}
+
+.h-blocks-item {
+	position: relative;
+	height: 150px;
+	overflow: hidden;
+	top: 50px;
+	opacity: 0;
+}
+.h-1 {
+	-webkit-animation: h-item-anim 1s; /* Safari 4.0 - 8.0 */
+  	animation: h-item-anim 1s;
+  	-webkit-animation-fill-mode: forwards;
+  	animation-fill-mode: forwards;
+  	animation-delay: 0.7s;
+}
+.h-2 {
+	-webkit-animation: h-item-anim 1s; /* Safari 4.0 - 8.0 */
+  	animation: h-item-anim 1s;
+  	-webkit-animation-fill-mode: forwards;
+  	animation-fill-mode: forwards;
+  	animation-delay: 1s;
+}
+.h-3 {
+	-webkit-animation: h-item-anim 1s; /* Safari 4.0 - 8.0 */
+  	animation: h-item-anim 1s;
+  	-webkit-animation-fill-mode: forwards;
+  	animation-fill-mode: forwards;
+  	animation-delay: 1.3s;
+}
+.h-blocks-img img{
+	max-width: 100%;
+}
+
+.h-block-text {
+	position: absolute;
+	display: -webkit-flex; /* Safari */
+  	-webkit-align-items: center; /* Safari 7.0+ */
+  	display: flex;
+  	align-items: center;
+	color: var(--light);
+	background-color: rgba(50, 48, 49, 0.3);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin-left: 15px;
+	margin-right: 15px;
+	transition: all 0.2s ease-in-out;
+}
+
+.h-block-text h3 {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.h-block-text:hover {
+	background-color: rgba(50, 48, 49, 0.8);
+}
+
+@keyframes h-item-anim {
+	from {
+		top: 50px;
+		opacity: 0;
+	}
+	to {
+		top: 0px;
+		opacity: 1;
+	}
+}
+/*---------------
+--Section Alert
+----------------*/
+
+.section-alert {
+	padding: 3rem 0;
+	border-top: var(--blue) thin solid;
+	text-align: center;
+	background-color: var(--light-gray);
+}
+	.section-alert a {
+		color: #C0392B;
+	}
+/*------------
+--Footer
+-------------*/
+
+.foot {
+	background-color: var(--dark-blue);
+	color: var(--light);
+}
+	.foot a {
+		color: var(--light);
+	}
+		.foot a:hover {
+			color: var(--light);
+			opacity: 0.7;
+		}
+	.foot li {
+		list-style: none;
+		padding: 8px 0;
+		border-bottom: var(--light) thin solid;
+	}
+		.foot li a {
+			display: block;
+		}
+
+.foot-bottom {
+	padding: 15px 0;
+	text-align: center;
+	background-color: black;
+}
+
+.foot .library-image {
+	margin: 0;
+}
