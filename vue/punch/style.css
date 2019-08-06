@@ -1,0 +1,67 @@
+#canvas {
+	width: 500px;
+	height: 500px;
+	border: black solid thin;
+}
+
+/*-----------Dynamic CSS-----------*/
+
+
+
+.available span {
+	background:green;
+}
+
+.nearby span::after {
+	content: 'nearby';
+	margin-left:10px;
+}
+
+
+/*------------- Punching Bage Game -------------------*/
+
+.bag {
+	width: 250px;
+	background-color:red;
+	height:500px;
+	margin: 0 auto;
+	margin-top: 50px;
+	border-radius: 20px;
+}
+.black {
+	background-color: black;
+	position: relative;
+}
+	.black::before {
+		content: 'YOU WON';
+		position: absolute;
+		top:40%;
+		bottom:auto;
+		left:0;
+		right:0;
+		color:#fff;
+		font-size: 3.3rem;
+	}
+.health {
+	width:200px;
+	border: black thin solid;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+	.health div {
+		height:20px;
+		background:red;
+	}
+
+#restart {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.btn-punch {
+	background-color: red;
+	color:#fff !important;
+}
+	.btn-punch:hover {
+		opacity: 0.8;
+	}
