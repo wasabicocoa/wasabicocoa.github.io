@@ -21,6 +21,7 @@
 /*------------- Punching Bage Game -------------------*/
 
 .bag {
+	position: relative;
 	width: 250px;
 	background-color:red;
 	height:500px;
@@ -65,3 +66,11 @@
 	.btn-punch:hover {
 		opacity: 0.8;
 	}
+.on {
+	position: absolute;
+	top: 30%;
+	bottom:auto;
+}
+.off {
+	display: none;
+}
