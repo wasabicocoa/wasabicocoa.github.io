@@ -46,7 +46,7 @@
 							var img = document.getElementById('punchIMG');
 							img.classList.toggle('off');
 
-							this.health -= 10;
+							this.health -= 0.05;
 
 							console.log(this.health);
 
@@ -62,7 +62,7 @@
 						},
 						restart: function() {
 							var img = document.getElementById('punchIMG');
-							
+
 							this.health = 100;
 							this.ended = false;
 							img.classList.add('off');
