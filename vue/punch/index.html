@@ -13,6 +13,7 @@
 <body>
   <div id="vue-app">
 		<div class="text-center pt-3"><h1>Punch The Bag</h1></div>
+		<div class="text-center"><strong>You've Destroyed the Bag {{ count }} Times</strong></div>
 		<div v-on:click="punch()" v-bind:class="{ black: ended }" class="bag">
 				<img id="punchIMG" class="on off img-fluid" src="site/punch.png" />
 		</div>
@@ -39,14 +40,15 @@
           el: '#vue-app',
           data: {
 						health: 100,
-						ended: false
+						ended: false,
+						count: 0
           },
           methods: {
 						punch: function() {
 							var img = document.getElementById('punchIMG');
 							img.classList.toggle('off');
 
-							this.health -= 0.05;
+							this.health -= 10;
 
 							console.log(this.health);
 
@@ -59,6 +61,11 @@
 								this.health = 100;
 								this.ended = false;
 							};
+
+							if (this.health <= 0) {
+								this.count += 1;
+								console.log(this.count);
+							}
 						},
 						restart: function() {
 							var img = document.getElementById('punchIMG');
@@ -66,7 +73,7 @@
 							this.health = 100;
 							this.ended = false;
 							img.classList.add('off');
-						},
+						}
           },
           computed: {
 
