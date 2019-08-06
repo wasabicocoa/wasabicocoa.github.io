@@ -13,7 +13,9 @@
 <body>
   <div id="vue-app">
 		<div class="text-center pt-3"><h1>Punch The Bag</h1></div>
-		<div v-on:click="punch()" v-bind:class="{ black: ended }" class="bag"></div>
+		<div v-on:click="punch()" v-bind:class="{ black: ended }" class="bag">
+				<img id="punchIMG" class="on off img-fluid" src="site/punch.png" />
+		</div>
 
 		<div id="health" class="health">
 			<div v-bind:style="{ width: health + '%' }"></div>
@@ -41,11 +43,18 @@
           },
           methods: {
 						punch: function() {
+							var img = document.getElementById('punchIMG');
+							img.classList.toggle('off');
+
 							this.health -= 10;
+
 							console.log(this.health);
+
 							if (this.health <= 0) {
 								this.ended = true;
+								img.classList.add('off');
 							};
+
 							if (this.health <= 0 - 10) {
 								this.health = 100;
 								this.ended = false;
@@ -54,7 +63,7 @@
 						restart: function() {
 							this.health = 100;
 							this.ended = false;
-						}
+						},
           },
           computed: {
 
