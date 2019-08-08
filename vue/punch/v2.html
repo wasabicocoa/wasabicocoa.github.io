@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<title></title>
+	<link rel="stylesheet" href="stylev2.css">
+</head>
+<body>
+  <div id="vue-app">
+		<div class="text-center pt-3"><h1>Punch The Bag v2</h1></div>
+		<div class="text-center"><strong>You've Destroyed the Bag {{ count }} Times</strong></div>
+		<div v-on:click="punch()" id="bag" v-bind:class="{ black: ended }"  class="bag">
+				<img id="punchIMG" class="on off img-fluid" src="site/punch.png" />
+		</div>
+
+		<div v-bind:class="isHealth()" id="health" class="health">
+			<div id="green" v-bind:style="{ width: health + 'px' }"></div>
+		</div>
+
+		<div id="restart">
+			<a class="btn btn-punch" v-on:click="restart()">Restart</a>
+		</div>
+  </div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+  <!-- production version, optimized for size and speed -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+      var vm = new Vue({
+          el: '#vue-app',
+          data: {
+						health: 200,
+						inGame: false,
+						ended: false,
+						oneDown: false,
+						count: 0,
+						hit: 10,
+						hitBoss: 5
+          },
+          methods: {
+						punch: function() {
+							var img = document.getElementById('punchIMG');
+							var bag = document.getElementById('bag');
+							var healthBar = document.getElementById('green');
+
+							img.classList.toggle('off');
+
+							if (this.health <= 5) {
+								this.ended = true;
+								img.classList.add('off');
+							};
+
+							if (bag.classList.contains('blue')) {
+								this.inGame = true;
+							} else {
+								this.inGame = false;
+							};
+
+							if (this.inGame == true) {
+								this.health -= this.hitBoss;
+							} else {
+								this.health -= this.hit;
+							};
+
+							if (this.health <= 0) {
+								this.health = 200;
+								this.ended = false;
+								this.oneDown = true;
+							} else {
+								this.oneDown = false;
+							};
+
+							if (this.oneDown) {
+								this.count += 1;
+							};
+
+							if (this.health <= 80) {
+								healthBar.classList.add('red');
+							} else if (this.health <= 200) {
+								healthBar.classList.remove('red');
+							}
+
+							//console.log('oneDown' + this.oneDown);
+							//console.log('inGame' + this.inGame);
+							//console.log('health' + this.health);
+							//console.log('count' + this.count);
+						},
+						isHealth: function() {
+							var bag = document.getElementById('bag');
+							var healthBar = document.getElementById('health');
+
+							if (this.count % 3 == 0 ) {
+								bag.classList.add('blue');
+								bag.classList.remove('red');
+							} else {
+								bag.classList.add('red');
+								bag.classList.remove('blue');
+							};
+						},
+						restart: function() {
+							var img = document.getElementById('punchIMG');
+
+							this.health = 200;
+							this.ended = false;
+							this.count = 0;
+							img.classList.add('off');
+						}
+          },
+          computed: {
+
+          }
+      });
+  </script>
+</body>
+</html>
