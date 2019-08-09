@@ -1,5 +1,9 @@
 /*------------- Punching Bage Game -------------------*/
-
+.app-container {
+	width:100%;
+	max-width:100%;
+	overflow:hidden;
+}
 .bag {
 	position: relative;
 	width: 250px;
@@ -8,6 +12,7 @@
 	margin: 0 auto;
 	margin-top: 10px;
 	border-radius: 20px;
+
 }
 .black {
 	background-color: black;
