@@ -12,7 +12,6 @@
 	margin: 0 auto;
 	margin-top: 10px;
 	border-radius: 20px;
-
 }
 .black {
 	background-color: black;
@@ -54,7 +53,7 @@
 }
 .punch.on.img1 {
 	top: 10%;
-	left: 10%;
+	left: 0%;
 }
 .punch.on.img2 {
 	top: 15%;
