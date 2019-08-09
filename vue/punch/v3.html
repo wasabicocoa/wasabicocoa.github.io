@@ -12,22 +12,27 @@
 </head>
 <body>
   <div id="vue-app" class="app-container">
-		<div class="text-center pt-3"><h3>DragonBall Death Sentence</h3></div>
-		<div class="text-center"><strong>You've Won {{ count }} Fights</strong></div>
-		<h5 class="text-center">HP</h5>
-		<div v-bind:class="isMyHealth()" id="myHealth" class="health">
-			<div id="myGreen" v-bind:style="{ width: myHealth + 'px' }"></div>
-		</div>
-		<div v-on:click="punch()" id="bag" v-bind:class="{ black: ended }"  class="bag">
-				<img id="punchIMG" class="punch on off img-fluid" src="site/punch.png" />
-		</div>
-		<h5 class="text-center">Enemy</h5>
-		<div v-bind:class="newHero()" id="health" class="health">
-			<div id="green" v-bind:style="{ width: health + 'px' }"></div>
-		</div>
+		<div id="in-game" class="in-game">
+				<div class="text-center pt-3"><h3>DragonBall Death Sentence</h3></div>
+				<div class="text-center"><strong>You've Won {{ count }} Fights</strong></div>
+				<h5 class="text-center">HP</h5>
+				<div v-bind:class="isMyHealth()" id="myHealth" class="health">
+					<div id="myGreen" v-bind:style="{ width: myHealth + 'px' }"></div>
+				</div>
+				<div v-on:click="punch()" id="bag" v-bind:class="{ black: ended }"  class="bag">
+						<img id="punchIMG" class="punch on off img-fluid" src="site/punch.png" />
+				</div>
+				<h5 class="text-center">Enemy</h5>
+				<div v-bind:class="newHero()" id="health" class="health">
+					<div id="green" v-bind:style="{ width: health + 'px' }"></div>
+				</div>
 
-		<div id="restart">
-			<a class="btn btn-punch" v-on:click="restart()">Restart</a>
+				<div id="restart">
+					<a class="btn btn-punch" v-on:click="restart()">Restart</a>
+				</div>
+		</div>
+		<div id="finished" class="finished">
+				<h1>You Won</h1>
 		</div>
   </div>
 
@@ -60,17 +65,19 @@
 							var bag = document.getElementById('bag');
 							var healthBar = document.getElementById('green');
 							var myHealthBar = document.getElementById('green');
+							var game = document.getElementById('in-game');
+							var finished = document.getElementById('finished');
 
 							img.classList.toggle('off');
 
 							this.crit = Math.floor(Math.random() * 20);
 							this.hit = Math.floor(Math.random() * 4);
-							this.myHit = Math.floor(Math.random() * 2);
+							this.myHit = Math.floor(Math.random() * 3);
 
 							// decrease 1 if myHit is == to 1
 							if (this.myHit == 1) {
 								this.myHealth -= 1;
-							}
+							};
 
 							if (this.health <= 5) {
 								this.ended = true;
@@ -164,7 +171,13 @@
 							}
 
 
-
+							if (this.count == 71) {
+								finished.style.display = 'block';
+								game.style.display = 'none';
+							} else {
+								finished.style.display = 'none';
+								game.style.display = 'block';
+							}
 
 
 							//console.log('oneDown' + this.oneDown);

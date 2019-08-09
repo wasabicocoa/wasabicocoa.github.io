@@ -50,18 +50,20 @@
 	left:0;
 	right:0;
 	z-index: 10;
+	width: 100px;
 }
+
 .punch.on.img1 {
 	top: 10%;
-	left: 0%;
+	left: 30%;
 }
 .punch.on.img2 {
 	top: 15%;
-	left: -45%;
+	left: -10%;
 }
 .punch.on.img3 {
 	top: 40%;
-	left: 0%;
+	left: 50%;
 }
 .btn-punch {
 	background-color: #4D9AD4;
@@ -141,7 +143,7 @@
 }
 .boss8 {
 	background-color:#68132E;
-	background:url('site/thanos.png');
+	background:url('site/thanos.jpg');
 	background-position: center top;
 	background-size: auto 100%;
 	background-repeat: no-repeat;
