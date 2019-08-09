@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<title></title>
+	<link rel="stylesheet" href="stylev3.css">
+</head>
+<body>
+  <div id="vue-app">
+		<div class="text-center pt-3"><h1>DragonBall Death Sentence</h1></div>
+		<div class="text-center"><strong>You've Won {{ count }} Fights</strong></div>
+		<h5 class="text-center">HP</h5>
+		<div v-bind:class="isMyHealth()" id="myHealth" class="health">
+			<div id="myGreen" v-bind:style="{ width: myHealth + 'px' }"></div>
+		</div>
+		<div v-on:click="punch()" id="bag" v-bind:class="{ black: ended }"  class="bag">
+				<img id="punchIMG" class="punch on off img-fluid" src="site/punch.png" />
+		</div>
+		<h5 class="text-center">Enemy</h5>
+		<div v-bind:class="newHero()" id="health" class="health">
+			<div id="green" v-bind:style="{ width: health + 'px' }"></div>
+		</div>
+
+		<div id="restart">
+			<a class="btn btn-punch" v-on:click="restart()">Restart</a>
+		</div>
+  </div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+  <!-- production version, optimized for size and speed -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+      var vm = new Vue({
+          el: '#vue-app',
+          data: {
+						health: 200,
+						myHealth: 200,
+						inGame: false,
+						ended: false,
+						oneDown: false,
+						count: 0,
+						hit: 0,
+						myHit: 0,
+						crit: 0,
+						hero: 0,
+          },
+          methods: {
+						punch: function() {
+							var img = document.getElementById('punchIMG');
+							var bag = document.getElementById('bag');
+							var healthBar = document.getElementById('green');
+							var myHealthBar = document.getElementById('green');
+
+							img.classList.toggle('off');
+
+							this.crit = Math.floor(Math.random() * 20);
+							this.hit = Math.floor(Math.random() * 4);
+							this.myHit = Math.floor(Math.random() * 2);
+
+							// decrease 1 if myHit is == to 1
+							if (this.myHit == 1) {
+								this.myHealth -= 1;
+							}
+
+							if (this.health <= 5) {
+								this.ended = true;
+								img.classList.add('off');
+							};
+
+
+							// can tell if its a boss fight - not used for anything
+							if (bag.classList.contains('boss')) {
+								this.inGame = true;
+							} else {
+								this.inGame = false;
+							};
+
+							// when enemy health == 0 reset enemy health, my health, image and oneDown == true
+							if (this.health <= 0) {
+								this.health = 200;
+								this.myHealth = 200;
+								this.ended = false;
+								this.oneDown = true;
+							} else {
+								this.oneDown = false;
+							};
+
+							// when oneDown == true add 1 to counter
+							if (this.oneDown) {
+								this.count += 1;
+							};
+
+							// both healthbars turn red when below 80
+							if (this.health <= 80) {
+								healthBar.classList.add('red');
+							} else if (this.health <= 200) {
+								healthBar.classList.remove('red');
+							}
+
+							if (this.myhealth <= 80) {
+								myHealthBar.classList.add('red');
+							} else if (this.health <= 200) {
+								myHealthBar.classList.remove('red');
+							}
+
+							// change style of fist img at random intervals
+							switch (true) {
+								case this.hit == 1:
+									img.classList.add('img1');
+									img.classList.remove('img2');
+									img.classList.remove('img3');
+									break;
+								case this.hit == 2:
+									img.classList.add('img2');
+									img.classList.remove('img1');
+									img.classList.remove('img3');
+									break;
+								case this.hit == 3:
+									img.classList.add('img3');
+									img.classList.remove('img2');
+									img.classList.remove('img1');
+									break;
+
+							}
+
+							// boss damage done
+							switch (true) {
+								case this.count == 5:
+										this.health -= 5;
+										break;
+								case this.count == 10:
+										this.health -= 4;
+										break;
+								case this.count == 20:
+										this.health -= 3;
+										break;
+								case this.count == 30:
+										this.health -= 2;
+										break;
+								case this.count == 40:
+										this.health -= 2;
+										break;
+								case this.count == 50:
+										this.health -= 2;
+										break;
+								case this.count == 60:
+										this.health -= 1;
+										break;
+								case this.count == 70:
+										this.health -= 0.5;
+										break;
+								default:
+										this.health -= 10;
+							}
+
+
+
+
+
+							//console.log('oneDown' + this.oneDown);
+							//console.log('inGame' + this.inGame);
+							//console.log('health' + this.health);
+							//console.log('myHealth' + this.myHealth);
+							//console.log('count' + this.count);
+							//console.log('crit' + this.crit);
+						},
+						isMyHealth: function() {
+
+						},
+						newHero: function() {
+							var bag = document.getElementById('bag');
+
+							if (this.health <= 5) {
+								this.hero = Math.floor(Math.random() * 8);
+							}
+
+							//console.log('hero' + this.hero);
+
+							// Normal Enemies
+							switch (true) {
+								case this.hero == 0:
+									bag.classList.add('gohan');
+								break;
+								case this.hero == 1:
+									bag.classList.add('gohan');
+									bag.classList.remove('chichi');
+									bag.classList.remove('vegeta');
+									bag.classList.remove('piccolo');
+									bag.classList.remove('yamcha');
+									bag.classList.remove('krillen');
+									bag.classList.remove('trunks');
+								break;
+								case this.hero == 2:
+									bag.classList.add('chichi');
+									bag.classList.remove('gohan');
+									bag.classList.remove('vegeta');
+									bag.classList.remove('piccolo');
+									bag.classList.remove('yamcha');
+									bag.classList.remove('krillen');
+									bag.classList.remove('trunks');
+								break;
+								case this.hero == 3:
+									bag.classList.add('vegeta');
+									bag.classList.remove('gohan');
+									bag.classList.remove('chichi');
+									bag.classList.remove('piccolo');
+									bag.classList.remove('yamcha');
+									bag.classList.remove('krillen');
+									bag.classList.remove('trunks');
+
+								break;
+								case this.hero == 4:
+									bag.classList.add('piccolo');
+									bag.classList.remove('gohan');
+									bag.classList.remove('chichi');
+									bag.classList.remove('vegeta');
+									bag.classList.remove('yamcha');
+									bag.classList.remove('krillen');
+									bag.classList.remove('trunks');
+								break;
+								case this.hero == 5:
+									bag.classList.add('yamcha');
+									bag.classList.remove('gohan');
+									bag.classList.remove('chichi');
+									bag.classList.remove('vegeta');
+									bag.classList.remove('piccolo');
+									bag.classList.remove('krillen');
+									bag.classList.remove('trunks');
+								break;
+								case this.hero == 6:
+									bag.classList.add('krillen');
+									bag.classList.remove('gohan');
+									bag.classList.remove('chichi');
+									bag.classList.remove('vegeta');
+									bag.classList.remove('piccolo');
+									bag.classList.remove('yamcha');
+									bag.classList.remove('trunks');
+								break;
+								case this.hero == 7:
+									bag.classList.add('trunks');
+									bag.classList.remove('gohan');
+									bag.classList.remove('chichi');
+									bag.classList.remove('vegeta');
+									bag.classList.remove('piccolo');
+									bag.classList.remove('yamcha');
+									bag.classList.remove('krillen');
+								break;
+								case this.hero == 8:
+									bag.classList.add('boss');
+								break;
+							};
+
+							// Bosses
+							switch (true) {
+								case this.count == 5:
+									bag.classList.add('boss');
+									bag.classList.remove('gohan');
+									bag.classList.remove('chichi');
+									bag.classList.remove('vegeta');
+									bag.classList.remove('piccolo');
+									bag.classList.remove('yamcha');
+									bag.classList.remove('krillen');
+									bag.classList.remove('trunks');
+									break;
+								case this.count == 10:
+										bag.classList.add('boss2');
+										bag.classList.remove('gohan');
+										bag.classList.remove('chichi');
+										bag.classList.remove('vegeta');
+										bag.classList.remove('piccolo');
+										bag.classList.remove('yamcha');
+										bag.classList.remove('krillen');
+										bag.classList.remove('trunks');
+										break;
+								case this.count == 20:
+										bag.classList.add('boss3');
+										bag.classList.remove('gohan');
+										bag.classList.remove('chichi');
+										bag.classList.remove('vegeta');
+										bag.classList.remove('piccolo');
+										bag.classList.remove('yamcha');
+										bag.classList.remove('krillen');
+										bag.classList.remove('trunks');
+										break;
+								case this.count == 30:
+										bag.classList.add('boss4');
+										bag.classList.remove('gohan');
+										bag.classList.remove('chichi');
+										bag.classList.remove('vegeta');
+										bag.classList.remove('piccolo');
+										bag.classList.remove('yamcha');
+										bag.classList.remove('krillen');
+										bag.classList.remove('trunks');
+										break;
+								case this.count == 40:
+										bag.classList.add('boss5');
+										bag.classList.remove('gohan');
+										bag.classList.remove('chichi');
+										bag.classList.remove('vegeta');
+										bag.classList.remove('piccolo');
+										bag.classList.remove('yamcha');
+										bag.classList.remove('krillen');
+										bag.classList.remove('trunks');
+										break;
+								case this.count == 50:
+										bag.classList.add('boss6');
+										bag.classList.remove('gohan');
+										bag.classList.remove('chichi');
+										bag.classList.remove('vegeta');
+										bag.classList.remove('piccolo');
+										bag.classList.remove('yamcha');
+										bag.classList.remove('krillen');
+										bag.classList.remove('trunks');
+										break;
+								case this.count == 60:
+										bag.classList.add('boss7');
+										bag.classList.remove('gohan');
+										bag.classList.remove('chichi');
+										bag.classList.remove('vegeta');
+										bag.classList.remove('piccolo');
+										bag.classList.remove('yamcha');
+										bag.classList.remove('krillen');
+										bag.classList.remove('trunks');
+										break;
+								case this.count == 70:
+										bag.classList.add('boss8');
+										bag.classList.remove('gohan');
+										bag.classList.remove('chichi');
+										bag.classList.remove('vegeta');
+										bag.classList.remove('piccolo');
+										bag.classList.remove('yamcha');
+										bag.classList.remove('krillen');
+										bag.classList.remove('trunks');
+										break;
+							};
+						},
+						restart: function() {
+							var img = document.getElementById('punchIMG');
+
+							this.health = 200;
+							this.myHealth = 200;
+							this.ended = false;
+							this.count = 0;
+							img.classList.add('off');
+						},
+
+          },
+          computed: {
+
+          }
+      });
+  </script>
+</body>
+</html>

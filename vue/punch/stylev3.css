@@ -1,0 +1,205 @@
+/*------------- Punching Bage Game -------------------*/
+
+.bag {
+	position: relative;
+	width: 250px;
+	background-color:black;
+	height:500px;
+	margin: 0 auto;
+	margin-top: 10px;
+	border-radius: 20px;
+}
+.black {
+	background-color: black;
+	position: relative;
+}
+	.black::before {
+		content: 'ONE DOWN';
+		position: absolute;
+		top:40%;
+		bottom:auto;
+		left:50%;
+		right:0;
+		transform:translateX(-50%);
+		color:#fff;
+		font-size: 2rem;
+	}
+.health {
+	width:200px;
+	border: black thin solid;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+	.health div {
+		height:20px;
+
+	}
+
+#restart {
+	margin-top: 10px;
+	text-align: center;
+}
+.punch {
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	z-index: 10;
+}
+.punch.on.img1 {
+	top: 10%;
+	left: 50%;
+}
+.punch.on.img2 {
+	top: 15%;
+	left: -45%;
+}
+.punch.on.img3 {
+	top: 40%;
+	left: 0%;
+}
+.btn-punch {
+	background-color: #4D9AD4;
+	color:#fff !important;
+}
+	.btn-punch:hover {
+		opacity: 0.8;
+	}
+.on {
+	position: absolute;
+	top: 30%;
+	bottom:auto;
+}
+.off {
+	display: none;
+}
+#green {
+	background:#359245;
+}
+#myGreen {
+	background:#359245;
+}
+.red {
+	background-color: #4D9AD4;
+}
+	#green.red {
+		background-color:red !important;
+	}
+.boss {
+	background-color:#68132E;
+	background:url('site/goku-b1.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.boss2 {
+	background-color:#68132E;
+	background:url('site/ss.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.boss3 {
+	background-color:#68132E;
+	background:url('site/ss2.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.boss4 {
+	background-color:#68132E;
+	background:url('site/ss3.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.boss5 {
+	background-color:#68132E;
+	background:url('site/ss4.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.boss6 {
+	background-color:#68132E;
+	background:url('site/ssgod.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.boss7 {
+	background-color:#68132E;
+	background:url('site/ssgss.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.boss8 {
+	background-color:#68132E;
+	background:url('site/thanos.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.chichi {
+	background-color:#68132E;
+	background:url('site/chichi.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.gohan {
+	background-color:#68132E;
+	background:url('site/gohan.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.krillen {
+	background-color:#68132E;
+	background:url('site/Krillin.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.piccolo {
+	background-color:#68132E;
+	background:url('site/Piccolo.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.vegeta {
+	background-color:#68132E;
+	background:url('site/vegeta.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.trunks {
+	background-color:#68132E;
+	background:url('site/trunks.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.yamcha {
+	background-color:#68132E;
+	background:url('site/yamcha.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+	.blue::before {
+			content: "BOSS";
+			position: absolute;
+			top:10px;
+			bottom:auto;
+			left:50%;
+			right:0;
+			transform:translateX(-50%);
+			color:#fff;
+			font-size: 3.3rem;
+			font-weight: 700;
+	}
