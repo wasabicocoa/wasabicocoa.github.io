@@ -36,8 +36,9 @@
 				<a href="v3.html" class="btn btn-punch">Restart</a>
 		</div>
 		<div id="lost" class="contanter text-center">
-			<h1>Ha Ha You Lost</h1>
-			<a href="v3.html" class="btn btn-punch">Restart</a>
+			<h1>Go Home Yamcha</h1>
+			<p><a href="v3.html" class="btn btn-punch">Restart</a></p>
+			<img class="img-fluid" src="site/yamchadead.jpeg" />
 		</div>
   </div>
 
@@ -78,14 +79,14 @@
 
 							this.crit = Math.floor(Math.random() * 20);
 							this.hit = Math.floor(Math.random() * 4);
-							this.myHit = Math.floor(Math.random() * 7);
+							this.myHit = Math.floor(Math.random() * 6);
 
 							switch (true) {
 								case this.myHit == 2:
-									this.myHealth -= 1;
+									this.myHealth -= 100;
 									break;
 								case this.myHit == 4:
-									this.myHealth -= 1;
+									this.myHealth -= 100;
 							}
 
 							if (this.health <= 5) {
