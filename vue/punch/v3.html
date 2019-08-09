@@ -79,14 +79,14 @@
 
 							this.crit = Math.floor(Math.random() * 20);
 							this.hit = Math.floor(Math.random() * 4);
-							this.myHit = Math.floor(Math.random() * 6);
+							this.myHit = Math.floor(Math.random() * 7);
 
 							switch (true) {
 								case this.myHit == 2:
-									this.myHealth -= 100;
+									this.myHealth -= 1;
 									break;
 								case this.myHit == 4:
-									this.myHealth -= 100;
+									this.myHealth -= 2;
 							}
 
 							if (this.health <= 5) {
