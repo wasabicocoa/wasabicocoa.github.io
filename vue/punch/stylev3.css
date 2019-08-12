@@ -7,8 +7,9 @@
 .bag {
 	position: relative;
 	width: 250px;
+	max-width:100%;
 	background-color:black;
-	height:500px;
+	height:400px;
 	margin: 0 auto;
 	margin-top: 10px;
 	border-radius: 20px;
@@ -18,7 +19,7 @@
 	position: relative;
 }
 	.black::before {
-		content: 'ONE DOWN';
+		content: '';
 		position: absolute;
 		top:40%;
 		bottom:auto;
@@ -36,9 +37,13 @@
 }
 	.health div {
 		height:20px;
-
 	}
-
+#finished {
+	display: none;
+}
+#lost {
+	display: none;
+}
 #restart {
 	margin-top: 10px;
 	text-align: center;
@@ -143,6 +148,13 @@
 }
 .boss8 {
 	background-color:#68132E;
+	background:url('site/ultra.png');
+	background-position: center top;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+.boss9 {
+	background-color:#68132E;
 	background:url('site/thanos.jpg');
 	background-position: center top;
 	background-size: auto 100%;
@@ -209,3 +221,82 @@
 			font-size: 3.3rem;
 			font-weight: 700;
 	}
+/*--Skills--*/
+
+.skills {
+	display: flex;
+	display: -ms-flexbox;
+	flex-wrap: wrap;
+	max-width: 250px;
+	width:100%;
+	margin:0 auto;
+	text-align: center;
+	padding-top:15px;
+}
+	.skill-con {
+		position: relative;
+		flex: 0 0 33.333333%;
+		max-width:33.333333%;
+		display: none;
+	}
+	.skill {
+		position: relative;
+		width: 50px;
+		height:50px;
+		border-radius: 50%;
+		border: black 2px solid;
+		margin: 0 auto;
+		z-index: 5;
+	}
+	.s-5 {
+		background-color: red;
+		background:url('site/skill-1.png');
+		background-position: center center;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+	.s-10 {
+		background-color: red;
+		background:url('site/skill-2.png');
+		background-position: center center;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+	.s-15 {
+		background-color: red;
+		background:url('site/skill-3.jpg');
+		background-position: center center;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+
+	.skill-overlay::before {
+		content: '';
+		position: absolute;
+		width:50px;
+		height:50px;
+		border-radius: 50%;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		z-index: 10;
+		margin: 0 auto;
+		background-color:black;
+		opacity: 0.4;
+	}
+.pop-up-off {
+	display: none;
+}
+.pop-up-on {
+	display: block;
+	position: absolute;
+	top: 10%;
+	bottom:10%;
+	left:10%;
+	right:10%;
+	z-index: 100;
+	max-width:300px;
+	background-color: #fff;
+	margin: 0 auto;
+}

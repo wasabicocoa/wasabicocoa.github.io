@@ -15,21 +15,43 @@
 		<div id="in-game" class="in-game">
 				<div class="text-center pt-3"><h3>DragonBall Death Sentence</h3></div>
 				<div class="text-center"><strong>You've Won {{ count }} Fights</strong></div>
-				<h5 class="text-center">HP</h5>
-				<div v-bind:class="isMyHealth()" id="myHealth" class="health">
+				<h5 class="text-center">My HP</h5>
+				<div id="myHealth" class="health">
 					<div id="myGreen" v-bind:style="{ width: myHealth + 'px' }"></div>
 				</div>
+
 				<div v-on:click="punch()" id="bag" v-bind:class="{ black: ended }"  class="bag">
 						<img id="punchIMG" class="punch on off img-fluid" src="site/punch.png" />
 				</div>
-				<h5 class="text-center">Enemy</h5>
+
+				<div id="skills" class="skills">
+						<div id="s-5" v-bind:class="unlockOne()" class="skill-con">
+								<div v-on:click="skillOne" class="skill s-5"></div>
+						</div>
+						<div id="s-10" v-bind:class="unlockTwo()" class="skill-con">
+								<div v-on:click="skillTwo" class="skill s-10"></div>
+						</div>
+						<div id="s-15" v-bind:class="unlockThree()" class="skill-con">
+								<div v-on:click="skillThree" class="skill s-15"></div>
+						</div>
+				</div>
+
+				<h5 class="text-center">Enemy's HP</h5>
+
 				<div v-bind:class="newHero()" id="health" class="health">
 					<div id="green" v-bind:style="{ width: health + 'px' }"></div>
 				</div>
 
 				<div id="restart">
-					<a class="btn btn-punch" v-on:click="restart()">Restart</a>
+					<!--<a class="btn btn-punch" v-on:click="restart()">Restart</a>-->
+					<p><a href="v3.html" class="btn btn-punch">Restart</a></p>
 				</div>
+		</div>
+		<div id="pop-up" class="pop-up-off">
+				<h1>You've Unlocked a New Skill</h1>
+				<p>Skills are very useful for fighting bosses. When using a skill you will always deal damage without taking any damage yourself. </p>
+				<p>Skills to normal enemies will have less of an effect.</p>
+				<p><a v-on:click="close()" class="btn btn-punch">Okay</a></p>
 		</div>
 		<div id="finished" class="finished contanter text-center">
 				<h1>You Won</h1>
@@ -64,6 +86,14 @@
 						myHit: 0,
 						crit: 0,
 						hero: 0,
+						skillCounterOne: 0,
+						skillCounterTwo: 0,
+						skillCounterThree: 0,
+						skillOneUsed: false,
+						skillTwoUsed: false,
+						skillThreeUsed: false,
+						pop: false,
+						clickClose: false
           },
           methods: {
 						punch: function() {
@@ -77,6 +107,7 @@
 
 							img.classList.toggle('off');
 
+							// Creates a random number
 							this.crit = Math.floor(Math.random() * 20);
 							this.hit = Math.floor(Math.random() * 4);
 							this.myHit = Math.floor(Math.random() * 7);
@@ -121,13 +152,13 @@
 							// both healthbars turn red when below 80
 							if (this.health <= 80) {
 								healthBar.classList.add('red');
-							} else if (this.health <= 200) {
+							} else if (this.health >= 80) {
 								healthBar.classList.remove('red');
 							}
 
 							if (this.myhealth <= 80) {
 								myHealthBar.classList.add('red');
-							} else if (this.health <= 200) {
+							} else if (this.health >= 80) {
 								myHealthBar.classList.remove('red');
 							}
 
@@ -160,52 +191,78 @@
 										this.health -= 4;
 										break;
 								case this.count == 20:
-										this.health -= 3;
+										this.health -= 2;
 										break;
 								case this.count == 30:
-										this.health -= 2;
-										break;
-								case this.count == 40:
-										this.health -= 2;
-										break;
-								case this.count == 50:
-										this.health -= 2;
-										break;
-								case this.count == 60:
 										this.health -= 1;
 										break;
-								case this.count == 70:
+								case this.count == 40:
+										this.health -= 1;
+										break;
+								case this.count == 50:
+										this.health -= 0.8;
+										break;
+								case this.count == 60:
 										this.health -= 0.5;
+										break;
+								case this.count == 70:
+										this.health -= 0.2;
+										break;
+								case this.count == 80:
+										this.health -= 0.1;
 										break;
 								default:
 										this.health -= 10;
-							}
+							};
 
-							// changes when "game won"
-							if (this.count == 71) {
+							// changes when game won
+							if (this.count == 81) {
 								finished.style.display = 'block';
 								game.style.display = 'none';
 							} else {
 								finished.style.display = 'none';
-							}
+							};
 
-							//changes when "game lost"
+							//changes when game lost
 							if (this.myHealth <= 0) {
 								game.style.display = 'none';
 								lost.style.display = 'block';
 							} else {
 								lost.style.display = 'none';
+							};
+
+							// Skills Counter off/on
+
+							var skillOne = document.getElementById('s-5');
+							var skillTwo = document.getElementById('s-10');
+							var skillThree = document.getElementById('s-15');
+
+							this.skillCounterOne += 1;
+							this.skillCounterTwo += 1;
+							this.skillCounterThree += 1;
+
+							if(this.skillCounterOne == 5) {
+								skillOne.classList.remove('skill-overlay');
+								this.skillOneUsed == false;
 							}
 
-							//console.log('oneDown' + this.oneDown);
-							//console.log('inGame' + this.inGame);
-							//console.log('health' + this.health);
-							//console.log('myHealth' + this.myHealth);
-							//console.log('count' + this.count);
-							//console.log('crit' + this.crit);
-						},
-						isMyHealth: function() {
+							if(this.skillCounterTwo == 10) {
+								skillTwo.classList.remove('skill-overlay');
+								this.skillTwoUsed == false;
+							}
 
+							if(this.skillCounterThree == 15) {
+								skillThree.classList.remove('skill-overlay');
+								this.skillThreeUsed == false;
+							}
+
+							//console.log('oneDown ' + this.oneDown);
+							//console.log('inGame ' + this.inGame);
+							console.log('health ' + this.health);
+							//console.log('myHealth ' + this.myHealth);
+							//console.log('count ' + this.count);
+							//console.log('crit ' + this.crit);
+							console.log('Count One ' + this.skillCounterOne);
 						},
 						newHero: function() {
 							var bag = document.getElementById('bag');
@@ -372,18 +429,150 @@
 										bag.classList.remove('krillen');
 										bag.classList.remove('trunks');
 										break;
+								case this.count == 80:
+										bag.classList.add('boss9');
+										bag.classList.remove('gohan');
+										bag.classList.remove('chichi');
+										bag.classList.remove('vegeta');
+										bag.classList.remove('piccolo');
+										bag.classList.remove('yamcha');
+										bag.classList.remove('krillen');
+										bag.classList.remove('trunks');
+										break;
 							};
 						},
 						restart: function() {
 							var img = document.getElementById('punchIMG');
+							var bag = document.getElementById('bag');
+							var skillOne = document.getElementById('s-5');
+							var skillTwo = document.getElementById('s-10');
+							var skillThree = document.getElementById('s-15');
 
 							this.health = 200;
 							this.myHealth = 200;
 							this.ended = false;
 							this.count = 0;
 							img.classList.add('off');
-						},
 
+							bag.classList.remove('gohan');
+							bag.classList.remove('chichi');
+							bag.classList.remove('vegeta');
+							bag.classList.remove('piccolo');
+							bag.classList.remove('yamcha');
+							bag.classList.remove('krillen');
+							bag.classList.remove('trunks');
+							skillOne.classList.remove('skill-overlay');
+							skillTwo.classList.remove('skill-overlay');
+							skillThree.classList.remove('skill-overlay');
+						},
+						skillOne: function() {
+								var skill = document.getElementById('s-5');
+
+								this.health -= 5;
+								this.skillOneUsed = true;
+								this.skillCounterOne = 0;
+
+								if(this.skillOneUsed == true) {
+									skill.classList.add('skill-overlay');
+								}
+
+
+						},
+						skillTwo: function() {
+								var skill = document.getElementById('s-10');
+
+								this.health -= 10;
+								this.skillTwoUsed = true;
+								this.skillCounterTwo = 0;
+
+								if(this.skillTwoUsed == true) {
+									skill.classList.add('skill-overlay');
+								}
+						},
+						skillThree: function() {
+								var skill = document.getElementById('s-15');
+
+								this.health -= 15;
+								this.skillThreeUsed = true;
+								this.skillCounterThree = 0;
+
+								if(this.skillThreeUsed == true) {
+									skill.classList.add('skill-overlay');
+								}
+						},
+						unlockOne: function() {
+							var skill = document.getElementById('s-5');
+							var popUp = document.getElementById('pop-up');
+
+							if (this.count == 6 && this.clickClose == false) {
+								skill.style.display = "block";
+								this.pop = true;
+							} else if (this.count == 6 && this.clickClose == true) {
+								skill.style.display = "block";
+								this.pop = false;
+							}
+
+							switch (true) {
+								case this.pop == true:
+									popUp.classList.add('pop-up-on');
+									break;
+								case this.pop == false:
+									popUp.classList.remove('pop-up-on');
+									break;
+							}
+
+							console.log('pop ' + this.pop);
+						},
+						unlockTwo: function() {
+							var skill = document.getElementById('s-10');
+							var popUp = document.getElementById('pop-up');
+
+							if (this.count == 21 && this.clickClose == false) {
+								skill.style.display = "block";
+								this.pop = true;
+							} else if (this.count == 21 && this.clickClose == true) {
+								skill.style.display = "block";
+								this.pop = false;
+							}
+
+							switch (true) {
+								case this.pop == true:
+									popUp.classList.add('pop-up-on');
+									break;
+								case this.pop == false:
+									popUp.classList.remove('pop-up-on');
+									break;
+							}
+						},
+						unlockThree: function() {
+							var skill = document.getElementById('s-15');
+							var popUp = document.getElementById('pop-up');
+
+							if (this.count == 41 && this.clickClose == false) {
+								skill.style.display = "block";
+								this.pop = true;
+							} else if (this.count == 41 && this.clickClose == true) {
+								skill.style.display = "block";
+								this.pop = false;
+							}
+
+							switch (true) {
+								case this.pop == true:
+									popUp.classList.add('pop-up-on');
+									break;
+								case this.pop == false:
+									popUp.classList.remove('pop-up-on');
+									break;
+							}
+						},
+						close: function() {
+							var popUp = document.getElementById('pop-up');
+
+							popUp.classList.remove('pop-up-on');
+							this.pop = false;
+							this.clickClose = true;
+							console.log('pop ' + this.pop);
+						}
           },
           computed: {
 
