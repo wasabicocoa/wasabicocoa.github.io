@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<title></title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="swiper.css">
+
+  <!-- styles -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+    }
+    .swiper-img img {
+      width: 100%;
+      height: auto;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .swiper-caption {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0, 0.7);
+      color: #fff;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .swiper-pagination-bullet {
+      background: #fff;
+    }
+    .swiper-pagination-bullet-active {
+      background: #fff;
+    }
+
+    @media only screen and (max-width: 1500px) {
+        .swiper-img img {
+          width: 1500px;
+          height: auto;
+        }
+    }
+
+    @media only screen and (max-width:1200px) {
+        .swiper-img img {
+          width: 1200px;
+          height: auto;
+        }
+    }
+
+     @media only screen and (max-width:992px) {
+        .swiper-img img {
+          width: 992px;
+          height: auto;
+        }
+    }
+
+     @media only screen and (max-width:768px) {
+        .swiper-img img {
+          width: 768px;
+          height: auto;
+        }
+        .swiper-caption {
+          display: none;
+        }
+    }
+
+     @media only screen and (max-width: 576px) {
+        .swiper-img img {
+          width: 576px;
+          height: auto;
+        }
+    }
+
+     @media only screen and (max-width:475px) {
+        .swiper-img img {
+          width: 475px;
+          height: auto;
+        }
+    }
+		</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar- bg-l-blue sticky-top">
+	    <div class="container">
+	        <a class="navbar-brand" href="#"><img src="site/logo.png" /></a>
+	        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarNav">
+	            <ul class="navbar-nav ml-auto">
+	                <li class="nav-item">
+	                    <a class="nav-link active" href="#">Home</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#">About</a>
+	                </li>
+	                <li class="nav-item dropdown">
+	                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+	                    <div class="dropdown-menu dropdown-menu-left">
+	                        <ul>
+	                            <li class="dropdown-item"><a href="#">Link 1</a></li>
+	                            <li class="dropdown-item"><a href="#">Link 2</a></li>
+	                            <li class="dropdown-item"><a href="#">Link 3</a></li>
+	                        </ul>
+	                    </div>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#">Services</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#">Contact</a>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+	</nav>
+
+	<!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="swiper-img">
+          <img src="site/car-1.jpg" />
+        </div>
+        <div class="swiper-caption">
+          <h3>We Pride Ourselves In What We Do</h3>
+          <p>Lorem ipsum dolor sit amet, velit vitae
+						nisl vitae integer sit ipsum. Nunc potenti eu purus
+						dignissimos suscipit mi, velit pulvinar sed et, ante
+						ut sed, in nunc libero vestibulum sollicitudin ut, curae velit.
+						Provident eleifend ut malesuada pretium vivamus mattis,
+						sed nunc urna tristique nonummy lacus, eleifend laoreet ac
+						consequat vitae ultrices pede, porta lorem condimentum, viverra
+						lobortis ac amet iaculis.</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-img">
+          <img src="site/car-2.jpg" />
+        </div>
+        <div class="swiper-caption">
+          <h3>Tons of Supplies and More Coming</h3>
+          <p>Lorem ipsum dolor sit amet, velit vitae
+						nisl vitae integer sit ipsum. Nunc potenti eu purus
+						dignissimos suscipit mi, velit pulvinar sed et, ante
+						ut sed, in nunc libero vestibulum sollicitudin ut, curae velit.
+						Provident eleifend ut malesuada pretium vivamus mattis,
+						sed nunc urna tristique nonummy lacus, eleifend laoreet ac
+						consequat vitae ultrices pede, porta lorem condimentum, viverra
+						lobortis ac amet iaculis.</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-img">
+          <img src="site/car-3.jpg" />
+        </div>
+        <div class="swiper-caption">
+          <h3>The Steps From A to B</h3>
+          <p>Lorem ipsum dolor sit amet, velit vitae
+						nisl vitae integer sit ipsum. Nunc potenti eu purus
+						dignissimos suscipit mi, velit pulvinar sed et, ante
+						ut sed, in nunc libero vestibulum sollicitudin ut, curae velit.
+						Provident eleifend ut malesuada pretium vivamus mattis,
+						sed nunc urna tristique nonummy lacus, eleifend laoreet ac
+						consequat vitae ultrices pede, porta lorem condimentum, viverra
+						lobortis ac amet iaculis.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  </div>
+
+	<section class="container-fluid section-1">
+		<div class="h-bar"></div>
+		<div class="row d-flex align-items-center">
+			<div class="col-sm-12 col-md-12 col-lg-10 offset-lg-2 s1-header"><h3>Header Title</h3></div>
+
+			<div class="col-sm-1 d-none d-sm-none d-md-none d-lg-block"></div>
+			<div class="col-sm-6 col-md-6 col-lg-4">
+				<img class="img-fluid" src="site/l-1.jpg" />
+			</div>
+			<div class="col-sm-1 d-none d-sm-none d-md-none d-lg-block"></div>
+			<div class="col-sm-6 col-md-6 col-lg-5">
+					<p>
+						Lorem ipsum dolor sit amet, velit vitae nisl vitae integer sit ipsum. Nunc potenti eu purus dignissimos suscipit mi, velit pulvinar sed et, ante ut sed, in nunc libero vestibulum sollicitudin ut, curae velit. Provident eleifend ut malesuada pretium vivamus mattis, sed nunc urna tristique nonummy lacus, eleifend laoreet ac consequat vitae ultrices pede, porta lorem condimentum, viverra lobortis ac amet iaculis. Curabitur vel non in nisl ullamcorper nibh, pretium leo varius, a commodo porta pellentesque volutpat magna.
+					</p>
+			</div>
+			<div class="col-sm-1 d-none d-sm-none d-md-none d-lg-block"></div>
+			<div class="col-sm-1 d-none d-sm-none d-md-none d-lg-block"></div>
+			<div class="col-sm-6 col-md-6 col-lg-5 pt-5">
+					<p>
+						Lorem ipsum dolor sit amet, velit vitae nisl vitae integer sit ipsum. Nunc potenti eu purus dignissimos suscipit mi, velit pulvinar sed et, ante ut sed, in nunc libero vestibulum sollicitudin ut, curae velit. Provident eleifend ut malesuada pretium vivamus mattis, sed nunc urna tristique nonummy lacus, eleifend laoreet ac consequat vitae ultrices pede, porta lorem condimentum, viverra lobortis ac amet iaculis. Curabitur vel non in nisl ullamcorper nibh, pretium leo varius, a commodo porta pellentesque volutpat magna.
+					</p>
+			</div>
+			<div class="col-sm-1 d-none d-sm-none d-md-none d-lg-block"></div>
+			<div class="col-sm-6 col-md-6 col-lg-4 pt-5">
+				<img class="img-fluid" src="site/l-2.jpg" />
+			</div>
+		</div>
+	</section>
+
+	<section class="container-fluid section-2">
+		<div class="h-bar-2"></div>
+		<div class="row d-flex align-items-center">
+			<div class="col-sm-12 col-md-12 col-lg-10 text-right s2-header">
+					<h3>Header Title</h3>
+			</div>
+			<div class="col-sm-1 d-none d-sm-none d-md-none d-lg-block"></div>
+			<div class="col-sm-1 d-none d-sm-none d-md-none d-lg-block"></div>
+			<div class="col-sm-1 d-none d-sm-none d-md-none d-lg-block"></div>
+			<div class="col-sm-12 col-md-6 col-lg-5">
+				<p>
+					Lorem ipsum dolor sit amet, velit vitae nisl vitae integer sit ipsum. Nunc potenti eu purus dignissimos suscipit mi, velit pulvinar sed et, ante ut sed, in nunc libero vestibulum sollicitudin ut, curae velit. Provident eleifend ut malesuada pretium vivamus mattis, sed nunc urna tristique nonummy lacus, eleifend laoreet ac consequat vitae ultrices pede, porta lorem condimentum, viverra lobortis ac amet iaculis. Curabitur vel non in nisl ullamcorper nibh, pretium leo varius, a commodo porta pellentesque volutpat magna.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, velit vitae nisl vitae integer sit ipsum. Nunc potenti eu purus dignissimos suscipit mi, velit pulvinar sed et, ante ut sed, in nunc libero vestibulum sollicitudin ut, curae velit. Provident eleifend ut malesuada pretium vivamus mattis, sed nunc urna tristique nonummy lacus, eleifend laoreet ac consequat vitae ultrices pede, porta lorem condimentum, viverra lobortis ac amet iaculis. Curabitur vel non in nisl ullamcorper nibh, pretium leo varius, a commodo porta pellentesque volutpat magna.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, velit vitae nisl vitae integer sit ipsum. Nunc potenti eu purus dignissimos suscipit mi, velit pulvinar sed et, ante ut sed, in nunc libero vestibulum sollicitudin ut, curae velit. Provident eleifend ut malesuada pretium vivamus mattis, sed nunc urna tristique nonummy lacus, eleifend laoreet ac consequat vitae ultrices pede, porta lorem condimentum, viverra lobortis ac amet iaculis. Curabitur vel non in nisl ullamcorper nibh, pretium leo varius, a commodo porta pellentesque volutpat magna.
+				</p>
+				<a class="btn btn-l-blue" href="#">Button</a>
+			</div>
+			<div class="col-sm-1 d-none d-sm-none d-md-none d-lg-block"></div>
+			<div class="col-sm-12 col-md-6 col-lg-4 s2-img">
+					<div>
+						<img class="img-fluid" src="site/l-3.jpg" />
+					</div>
+					<div>
+						<img class="img-fluid" src="site/l-4.jpg" />
+					</div>
+			</div>
+			<div class="col-sm-12 d-none d-sm-none d-md-none d-lg-block"></div>
+		</div>
+	</section>
+
+	<main class="main container">
+			<cf_content>
+	</main>
+
+	<section class="container section-3">
+			<div class="row">
+					<div class="col-sm-6 offset-sm-3 text-center"><h3 class="news-title">Latest News</h3></div>
+					<div class="col-sm-3"></div>
+					<div class="col-sm-6 col-md-6 col-lg-3 pt-3">
+							<div class="card shadow">
+									<img class="card-img-top" src="site/slide-1.jpg" alt="Card image cap">
+									<div class="card-body">
+											<h5 class="card-title">Card Title</h5>
+											<p class="card-text">Lorem ipsum dolor sit amet, quisque pellentesque a, erat vitae mauris nullam. Risus vel egestas, aenean interdum integer lacus amet</p>
+									</div>
+							</div>
+					</div>
+					<div class="col-sm-6 col-md-6 col-lg-3 pt-3">
+							<div class="card shadow">
+									<img class="card-img-top" src="site/slide-2.jpg" alt="Card image cap">
+									<div class="card-body">
+											<h5 class="card-title">Card Title</h5>
+											<p class="card-text">Lorem ipsum dolor sit amet, quisque pellentesque a, erat vitae mauris nullam. Risus vel egestas, aenean interdum integer lacus amet</p>
+									</div>
+							</div>
+					</div>
+					<div class="col-sm-6 col-md-6 col-lg-3 pt-3">
+							<div class="card shadow">
+									<img class="card-img-top" src="site/slide-3.jpg" alt="Card image cap">
+									<div class="card-body">
+											<h5 class="card-title">Card Title</h5>
+											<p class="card-text">Lorem ipsum dolor sit amet, quisque pellentesque a, erat vitae mauris nullam. Risus vel egestas, aenean interdum integer lacus amet</p>
+									</div>
+							</div>
+					</div>
+					<div class="col-sm-6 col-md-6 col-lg-3 pt-3">
+							<div class="card shadow">
+									<img class="card-img-top" src="site/slide-4.jpg" alt="Card image cap">
+									<div class="card-body">
+											<h5 class="card-title">Card Title</h5>
+											<p class="card-text">Lorem ipsum dolor sit amet, quisque pellentesque a, erat vitae mauris nullam. Risus vel egestas, aenean interdum integer lacus amet</p>
+									</div>
+							</div>
+					</div>
+			</div>
+	</section>
+
+	<section class="contaner-fluid section-4">
+			<div class="s4-item container">
+					<div class="row s4-p d-flex align-items-center">
+							<div class="col-sm-12 col-md-4">
+									<h3>Section Four Header</h3>
+							</div>
+							<div class="col-sm-12 col-md-8">
+									<p>
+										Lorem ipsum dolor sit amet, quisque pellentesque a, erat vitae mauris nullam. Risus vel egestas, aenean interdum integer lacus amet, suspendisse felis, rhoncus libero, mauris fusce condimentum diam massa habitasse. Dolor metus, sed quis donec quis consectetuer, suscipit parturient, hendrerit egestas vel feugiat tellus, tortor dolor. Imperdiet donec nibh hic, molestie lorem, fusce est quam faucibus turpis lacus, cras mauris vel per auctor rutrum lectus, eget convallis ut reprehenderit donec dictum placerat. Accumsan dignissim, venenatis urna rhoncus, quis ea nibh. Ipsum litora praesent in amet sapien dolor, adipiscing pulvinar, justo vivamus phasellus quis. Convallis a aliquam quam dignissim, mauris sit libero pede, vel consequat, blandit nec vel. Donec nulla quis lorem in eu facilisis.
+									</p>
+							</div>
+					</div>
+			</div>
+	</section>
+
+	<footer class="foot">
+			<div class="container pb-4">
+					<div class="row">
+							<div class="col-sm-6 col-md-6 col-lg-3">
+									<img class="img-fluid" src="site/logo.png" />
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-3 foot-list">
+									<h3>Quick Links</h3>
+									<ul>
+										<li><a href="#">Home</a></li>
+										<li><a href="#">Gallery</a></li>
+										<li><a href="#">Services</a></li>
+										<li><a href="#">Contact</a></li>
+									</ul>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-3 foot-list">
+									<h3>Resources</h3>
+									<ul>
+										<li><a href="#">Montague WebWorks</a></li>
+										<li><a href="#">RocketFusion</a></li>
+										<li><a href="#">Town Websites</a></li>
+										<li><a href="#">Fast Contractor Sites</a></li>
+									</ul>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-3">
+									<h3>Contact Us</h3>
+									<ul>
+											<li><strong>Hours:</strong></li>
+											<li>Mon - Fri: 9am - 5pm</li>
+											<li>Sat - Sun: Closed</li>
+											<li><strong>Address</strong></li>
+											<li>123 Road st.</li>
+											<li>Greenfield, MA</li>
+											<li>(413) 765-4321</li>
+									</ul>
+							</div>
+					</div>
+			</div>
+			<div class="foot-bottom">
+					&copy; 2019 Window Works Western Mass | Montague WebWorks | Powered by RocketFusion
+			</div>
+	</footer>
+	<!-- Swiper JS -->
+  <script src="swiper.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 0,
+      effect: 'fade',
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.9/SmoothScroll.min.js"></script>
+</body>
+</html>
