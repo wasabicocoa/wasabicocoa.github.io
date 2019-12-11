@@ -7,115 +7,138 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<title></title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="_admin.css">
+	<style>
+		.calendarItem {
+			position: relative;
+		}
+		table.calendar td.date .append-calendar a {
+			color: white !important;
+			display: block;
+		}
+		@media only screen and (max-width: 576px) {
+		    .calendarItem {
+		        font-size: 0px !important;
+		        line-height: 30px !important;
+		    }
+		    .calendarItem::before {
+		        content: '  ';
+		        display:block;
+		        height: 10px;
+		        width: 10px;
+		        border-radius: 50%;
+		        background-color: blue;
+		        background-color: var(--primary);
+		    }
+		}
+	</style>
 </head>
 <body>
-
-  <header class="jumbotron jumbotron-fluid">
-    <div class="container text-center">
-        <h1 class="display-4">Responsive Websites With Bootstrap 4</h1>
-        <p class="lead">These are some examples of websites templates I did in the past. Please Refer to the READ ME.txt if you have any questions</p>
-    </div>
-  </header>
-
-  <main class="container">
-      <div class="row">
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">Biz and Con</p>
-              <a href="Biz and Con/index.html" target="_blank"><img class="img-fluid border" src="site/bizncon.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">Blue Box</p>
-              <a href="Blue Box/index.html" target="_blank"><img class="img-fluid border" src="site/BlueBox.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">Contractor Plus</p>
-              <a href="Contractor Plus/index.html" target="_blank"><img class="img-fluid border" src="site/contractorplus.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">Creative Blocks</p>
-              <a href="Creative Blocks/index.html" target="_blank"><img class="img-fluid border" src="site/creativeblock.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">FarmLand Express</p>
-              <a href="FarmLand Express/index.html" target="_blank"><img class="img-fluid border" src="site/FarmLandExpress.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">Live Entertainment</p>
-              <a href="Live Entertainment/index.html" target="_blank"><img class="img-fluid border" src="site/live.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">Local Design</p>
-              <a href="Local Design/index.html" target="_blank"><img class="img-fluid border" src="site/LocalDesign.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">Outline</p>
-              <a href="Outline/index.html" target="_blank"><img class="img-fluid border" src="site/outline-tmpl.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">Slider</p>
-              <a href="Slider/index.html" target="_blank"><img class="img-fluid border" src="site/slider.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">Small Repair</p>
-              <a href="Small Repair/index.html" target="_blank"><img class="img-fluid border" src="site/smallrepair.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">Tech Explored</p>
-              <a href="Tech Explored/index.html" target="_blank"><img class="img-fluid border" src="site/TechExplored.png" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">Tech UnFolded</p>
-              <a href="Tech UnFolded/index.html" target="_blank"><img class="img-fluid border" src="site/techunfolded.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 item">
-              <p class="mb-1 mt-5 text-left text-muted">UnCover</p>
-              <a href="UnCover/index.html" target="_blank"><img class="img-fluid border" src="site/uncover.jpg" /></a>
-              <p></p>
-          </div>
-          <div class="col-sm-12 col-md-6 mb-5 mt-5">
-              <h3>Unused and Other Templates</h3>
-              <div class="list-group">
-                  <a href="UNUSED/Craft Circle/index.html" class="list-group-item list-group-item-action">Craft Circle</a>
-                  <a href="UNUSED/UnCover Two/index.html" class="list-group-item list-group-item-action">UnCover Two</a>
-                  <a href="UNUSED/RocketFusion/index.html" class="list-group-item list-group-item-action">RocketFusion</a>
-									<a href="UNUSED/Line-Box/index.html" class="list-group-item list-group-item-action">Line Box</a>
-              </div>
-          </div>
-					<div class="col-sm-12 col-md-6 mb-5 mt-5">
-              <h3>Vue.js Things</h3>
-              <div class="list-group">
-                  <a href="vue/punch/index.html" class="list-group-item list-group-item-action">Punching Bag Game</a>
-									<a href="vue/punch/v2.html" class="list-group-item list-group-item-action">Punching Bag Game v2</a>
-									<a href="vue/punch/v3.html" class="list-group-item list-group-item-action">DragonBall Fighting Game</a>
-              </div>
-          </div>
-      </div>
-  </main>
+	<div class="container">
 
 
-  <footer class="foot pt-5 pb-5 text-light bg-dark text-center">
-      &copy; <a class="text-light" href="https://montaguewebworks.com">Montague WebWorks</a> | All Templates Powered by ROCKETFUSION | <a class="text-light" href="README.txt">README.txt</a>
-  </footer>
+	<table id="calendar" class="calendar" style="display:table;" cellspacing="0" cellpadding="3" border="0"><tbody><tr><td class="subheader">Sun</td><td class="subheader">Mon</td><td class="subheader">Tue</td><td class="subheader">Wed</td><td class="subheader">Thu</td><td class="subheader">Fri</td><td class="subheader">Sat</td></tr><tr><td class="date " valign="top" height="70" align="left">1 <a href="index.cfm?p=d.0&amp;adddate=2019-12-1&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">2 <a href="index.cfm?p=d.0&amp;adddate=2019-12-2&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">3 <a href="index.cfm?p=d.0&amp;adddate=2019-12-3&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">4 <a href="index.cfm?p=d.0&amp;adddate=2019-12-4&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td>
+		<td class="date " valign="top" height="70" align="left">5 <a href="index.cfm?p=d.0&amp;adddate=2019-12-5&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
+					<a href="/d/432/Public-Meeting">Public Meeting</a>
+					12:00 p - 2:00 p
+			</div>
+		</td>
+		<td class="date " valign="top" height="70" align="left">6 <a href="index.cfm?p=d.0&amp;adddate=2019-12-6&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
+					<a href="/d/532/Public-Meeting">Non-Public Meeting</a>
+					12:00 p - 2:00 p
+			</div>
+			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
+					<a href="/d/632/Public-Meeting">Non-Public Meeting</a>
+					12:00 p - 2:00 p
+			</div>
+		</td>
+		<td class="date " valign="top" height="70" align="left">7 <a href="index.cfm?p=d.0&amp;adddate=2019-12-7&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td></tr><tr><td class="date " valign="top" height="70" align="left">8 <a href="index.cfm?p=d.0&amp;adddate=2019-12-8&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">9 <a href="index.cfm?p=d.0&amp;adddate=2019-12-9&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">10 <a href="index.cfm?p=d.0&amp;adddate=2019-12-10&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date current" valign="top" height="70" align="left">11 <a href="index.cfm?p=d.0&amp;adddate=2019-12-11&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">12 <a href="index.cfm?p=d.0&amp;adddate=2019-12-12&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">13 <a href="index.cfm?p=d.0&amp;adddate=2019-12-13&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">14 <a href="index.cfm?p=d.0&amp;adddate=2019-12-14&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td></tr><tr><td class="date " valign="top" height="70" align="left">15 <a href="index.cfm?p=d.0&amp;adddate=2019-12-15&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
+					<a href="/d/732/Public-Meeting">Another-Public Meeting</a>
+					12:00 p - 2:00 p
+			</div>
+			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
+					<a href="/d/832/Public-Meeting">Help Meeting</a>
+					12:00 p - 2:00 p
+			</div>
+		</td><td class="date " valign="top" height="70" align="left">16 <a href="index.cfm?p=d.0&amp;adddate=2019-12-16&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">17 <a href="index.cfm?p=d.0&amp;adddate=2019-12-17&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">18 <a href="index.cfm?p=d.0&amp;adddate=2019-12-18&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">19 <a href="index.cfm?p=d.0&amp;adddate=2019-12-19&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">20 <a href="index.cfm?p=d.0&amp;adddate=2019-12-20&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">21 <a href="index.cfm?p=d.0&amp;adddate=2019-12-21&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td></tr><tr><td class="date " valign="top" height="70" align="left">22 <a href="index.cfm?p=d.0&amp;adddate=2019-12-22&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">23 <a href="index.cfm?p=d.0&amp;adddate=2019-12-23&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">24 <a href="index.cfm?p=d.0&amp;adddate=2019-12-24&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">25 <a href="index.cfm?p=d.0&amp;adddate=2019-12-25&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">26 <a href="index.cfm?p=d.0&amp;adddate=2019-12-26&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">27 <a href="index.cfm?p=d.0&amp;adddate=2019-12-27&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">28 <a href="index.cfm?p=d.0&amp;adddate=2019-12-28&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td></tr><tr><td class="date " valign="top" height="70" align="left">29 <a href="index.cfm?p=d.0&amp;adddate=2019-12-29&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">30 <a href="index.cfm?p=d.0&amp;adddate=2019-12-30&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td class="date " valign="top" height="70" align="left">31 <a href="index.cfm?p=d.0&amp;adddate=2019-12-31&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+		</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	</tbody></table>
+	</div>
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
             crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
             crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.9/SmoothScroll.min.js"></script>
+	<script>
+		let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+		let clientW = window.innerWidth;
+		let oStyle;
+
+		if(clientW > 576){
+			oStyle = 'position: absolute; top:' + 'auto' +'; bottom:auto; left:' + 'auto' + '; right:auto; background-color:#5b5b5b; color:white; font-wight: 600; font-size: 18px; font-weight: 600; padding:5px; width:200px; max-width: 200%; line-height:18px; z-index:10;';
+		} else {
+			oStyle = 'position: absolute; top:' + '100%' +'; bottom:auto; left:' + '0' + '; right:auto; background-color:#5b5b5b; color:white; font-wight: 600; font-size: 16px; font-weight: 600; padding:5px; width:200px; max-width: 230%; line-height:18px; z-index:10;';
+		}
+		function oDiv(style, el){
+			return '<div style="' + style + '" class="append-calendar" id="append-calendar">' + el + '</div>';
+		};
+
+		if(!iOS){
+			$( '#calendar' ).find( 'div.calendarItem' ).on('mouseenter', function(event) {
+				let targetInner = this.innerHTML;
+				let target = event.target;
+				$( target ).append(oDiv(oStyle, targetInner));
+			});
+			$( '#calendar' ).find( 'div.calendarItem' ).on('mouseleave', function(event) {
+				$( '.append-calendar' ).remove( '.append-calendar' );
+			});
+		} else {
+			$( '#calendar' ).find( 'div.calendarItem' ).on('click', function(event) {
+				let targetInner = this.innerHTML;
+				let target = event.target;
+				let oDivCreated = document.getElementById('append-calendar');
+				if( oDivCreated ){
+					$( '.append-calendar' ).remove( '.append-calendar' );
+				} else if ( !oDivCreated ) {
+					$( target ).append(oDiv(oStyle, targetInner));
+				}
+			});
+		}
+	</script>
 </body>
 </html>
