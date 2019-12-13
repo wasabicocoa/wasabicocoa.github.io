@@ -11,13 +11,102 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="_admin.css">
 	<style>
+		/*--------Need This----------*/
 		.calendarItem {
 			position: relative;
+		}
+		.append-calendar {
+			position: absolute;
+			top:auto;
+			bottom:auto;
+			left:0;
+			right:0;
+			background-color:#5b5b5b;
+			color:white;
+			font-wight: 600;
+			font-size: 16px;
+			font-weight: 600;
+			padding:10px 5px;
+			width:200px;
+			max-width: 100%;
+			line-height:19px;
+			z-index:10;
+			border-left: #333 3px solid;
+		}
+		.append-calendar::before {
+			position: absolute;
+			content: '';
+			top:-3px;
+			bottom:auto;
+			left:0;
+			right:auto;
+			background-color:#5b5b5b;
+			width: 14px;
+			height: 10px;
+			transform: rotate(45deg);
+			z-index: 20;
 		}
 		table.calendar td.date .append-calendar a {
 			color: white !important;
 			display: block;
+			margin-bottom: 5px;
+			font-size: 18px;
 		}
+		@media only screen and (max-width: 767px){
+			.append-calendar {
+				position: absolute;
+				top:100%;
+				bottom:auto;
+				left:0;
+				right:0;
+				background-color:#5b5b5b;
+				color:white;
+				font-wight: 600;
+				font-size: 12px;
+				font-weight: 600;
+				padding:5px;
+				width:200px;
+				max-width: 210%;
+				line-height:18px;
+				z-index:10;
+			}
+			table.calendar td.date .append-calendar a {
+				font-size: 14px;
+			}
+			.on-end {
+				left: -100% !important;
+			}
+			.on-end::before {
+				position: absolute;
+				content: '';
+				top:-3px;
+				bottom:auto;
+				left:auto !important;
+				right:0 !important;
+				background-color:#5b5b5b;
+				width: 14px;
+				height: 10px;
+				transform: rotate(45deg);
+				z-index: 20;
+			}
+		}
+		@media only screen and (max-width: 576px){
+			.append-calendar {
+				max-width: 210%;
+			}
+			.on-end {
+				left: -110% !important;
+			}
+		}
+		@media only screen and (max-width: 450px){
+			.append-calendar {
+				max-width: 240%;
+			}
+			.on-end {
+				left: -140% !important;
+			}
+		}
+		/*----Dont Need This----*/
 		@media only screen and (max-width: 576px) {
 		    .calendarItem {
 		        font-size: 0px !important;
@@ -37,9 +126,8 @@
 </head>
 <body>
 	<div class="container">
-
-
-	<table id="calendar" class="calendar" style="display:table;" cellspacing="0" cellpadding="3" border="0"><tbody><tr><td class="subheader">Sun</td><td class="subheader">Mon</td><td class="subheader">Tue</td><td class="subheader">Wed</td><td class="subheader">Thu</td><td class="subheader">Fri</td><td class="subheader">Sat</td></tr><tr><td class="date " valign="top" height="70" align="left">1 <a href="index.cfm?p=d.0&amp;adddate=2019-12-1&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+	<table id="calendar" class="calendar" style="display:table;" cellspacing="0" cellpadding="3" border="0"><tbody><tr><td class="subheader">Sun</td><td class="subheader">Mon</td><td class="subheader">Tue</td><td class="subheader">Wed</td>
+		<td class="subheader">Thu</td><td class="subheader">Fri</td><td class="subheader">Sat</td></tr><tr><td class="date " valign="top" height="70" align="left">1 <a href="index.cfm?p=d.0&amp;adddate=2019-12-1&amp;edit=add&amp;cid=0" class="noprint"><img src="/		RFassets/ui/add.png" border="0"></a>
 		</td><td class="date " valign="top" height="70" align="left">2 <a href="index.cfm?p=d.0&amp;adddate=2019-12-2&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
 		</td><td class="date " valign="top" height="70" align="left">3 <a href="index.cfm?p=d.0&amp;adddate=2019-12-3&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
 		</td><td class="date " valign="top" height="70" align="left">4 <a href="index.cfm?p=d.0&amp;adddate=2019-12-4&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
@@ -61,6 +149,10 @@
 			</div>
 		</td>
 		<td class="date " valign="top" height="70" align="left">7 <a href="index.cfm?p=d.0&amp;adddate=2019-12-7&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
+			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
+					<a href="/d/632/Public-Meeting">Non-Public Meeting</a>
+					12:00 p - 2:00 p
+			</div>
 		</td></tr><tr><td class="date " valign="top" height="70" align="left">8 <a href="index.cfm?p=d.0&amp;adddate=2019-12-8&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
 		</td><td class="date " valign="top" height="70" align="left">9 <a href="index.cfm?p=d.0&amp;adddate=2019-12-9&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
 		</td><td class="date " valign="top" height="70" align="left">10 <a href="index.cfm?p=d.0&amp;adddate=2019-12-10&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
@@ -105,37 +197,60 @@
             crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.9/SmoothScroll.min.js"></script>
 	<script>
+		let calendar = document.getElementById('calendar');
+		let calItemEnd = (calendar.offsetWidth / 7) * 6
+		// Check if IOS
 		let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+		// Find window width
 		let clientW = window.innerWidth;
+		// Set style
 		let oStyle;
-
-		if(clientW > 576){
-			oStyle = 'position: absolute; top:' + 'auto' +'; bottom:auto; left:' + 'auto' + '; right:auto; background-color:#5b5b5b; color:white; font-wight: 600; font-size: 18px; font-weight: 600; padding:5px; width:200px; max-width: 200%; line-height:18px; z-index:10;';
-		} else {
-			oStyle = 'position: absolute; top:' + '100%' +'; bottom:auto; left:' + '0' + '; right:auto; background-color:#5b5b5b; color:white; font-wight: 600; font-size: 16px; font-weight: 600; padding:5px; width:200px; max-width: 230%; line-height:18px; z-index:10;';
+		// Set style for phone and above
+		if((clientW > 576)){
+			oStyle = '';
+		} else /* Set Style for Phone */{
+			oStyle = '';
 		}
-		function oDiv(style, el){
-			return '<div style="' + style + '" class="append-calendar" id="append-calendar">' + el + '</div>';
+		// Create DIV with params
+		function oDiv(style, el, addClass){
+			return '<div style="' + style + '" class="append-calendar ' + addClass +'" id="append-calendar">' + el + '</div>';
 		};
-
+		// If not IOS run code if IOS run other code
 		if(!iOS){
+			// On mouseenter add div [oDIv] with params
 			$( '#calendar' ).find( 'div.calendarItem' ).on('mouseenter', function(event) {
 				let targetInner = this.innerHTML;
 				let target = event.target;
-				$( target ).append(oDiv(oStyle, targetInner));
+				oStyle = '';
+				if(target.offsetLeft > (calendar.offsetWidth / 7) * 6){
+					$( target ).append(oDiv(oStyle, targetInner, 'on-end'));
+				} else {
+					$( target ).append(oDiv(oStyle, targetInner, ''));
+				}
 			});
+			// on mouseleave remove div [oDiv]
 			$( '#calendar' ).find( 'div.calendarItem' ).on('mouseleave', function(event) {
 				$( '.append-calendar' ).remove( '.append-calendar' );
 			});
 		} else {
-			$( '#calendar' ).find( 'div.calendarItem' ).on('click', function(event) {
-				let targetInner = this.innerHTML;
+			// On click add div [oDiv] with params
+			$( '#calendar' ).on('click', function(event) {
+				let targetInner = event.target.innerHTML;
 				let target = event.target;
+				//Check to see if event.target has required class
+				let jTarget = $( event.target ).hasClass('calendarItem');
+				oStyle = '';
 				let oDivCreated = document.getElementById('append-calendar');
 				if( oDivCreated ){
+					// if div already exists remove div
 					$( '.append-calendar' ).remove( '.append-calendar' );
 				} else if ( !oDivCreated ) {
-					$( target ).append(oDiv(oStyle, targetInner));
+					// if div doesn't exists and has required class add div [oDiv] with params
+					if(target.offsetLeft > (calendar.offsetWidth / 7) * 6 && jTarget){
+						$( target ).append(oDiv(oStyle, targetInner, 'on-end'));
+					} else if (jTarget) {
+						$( target ).append(oDiv(oStyle, targetInner, ''));
+					}
 				}
 			});
 		}
