@@ -9,185 +9,378 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<title></title>
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="_admin.css">
-	<style>
-		/*--------Need This----------*/
-		.calendarItem {
-			position: relative;
-		}
-		.append-calendar {
-			position: absolute;
-			top:auto;
-			bottom:auto;
-			left:0;
-			right:0;
-			background-color:#5b5b5b;
-			color:white;
-			font-wight: 600;
-			font-size: 16px;
-			font-weight: 600;
-			padding:10px 5px;
-			width:200px;
-			max-width: 100%;
-			line-height:19px;
-			z-index:10;
-			border-left: #333 3px solid;
-		}
-		.append-calendar::before {
-			position: absolute;
-			content: '';
-			top:-3px;
-			bottom:auto;
-			left:0;
-			right:auto;
-			background-color:#5b5b5b;
-			width: 14px;
-			height: 10px;
-			transform: rotate(45deg);
-			z-index: 20;
-		}
-		table.calendar td.date .append-calendar a {
-			color: white !important;
-			display: block;
-			margin-bottom: 5px;
-			font-size: 18px;
-		}
-		@media only screen and (max-width: 767px){
-			.append-calendar {
-				position: absolute;
-				top:100%;
-				bottom:auto;
-				left:0;
-				right:0;
-				background-color:#5b5b5b;
-				color:white;
-				font-wight: 600;
-				font-size: 12px;
-				font-weight: 600;
-				padding:5px;
-				width:200px;
-				max-width: 210%;
-				line-height:18px;
-				z-index:10;
-			}
-			table.calendar td.date .append-calendar a {
-				font-size: 14px;
-			}
-			.on-end {
-				left: -100% !important;
-			}
-			.on-end::before {
-				position: absolute;
-				content: '';
-				top:-3px;
-				bottom:auto;
-				left:auto !important;
-				right:0 !important;
-				background-color:#5b5b5b;
-				width: 14px;
-				height: 10px;
-				transform: rotate(45deg);
-				z-index: 20;
-			}
-		}
-		@media only screen and (max-width: 576px){
-			.append-calendar {
-				max-width: 210%;
-			}
-			.on-end {
-				left: -110% !important;
-			}
-		}
-		@media only screen and (max-width: 450px){
-			.append-calendar {
-				max-width: 240%;
-			}
-			.on-end {
-				left: -140% !important;
-			}
-		}
-		/*----Dont Need This----*/
-		@media only screen and (max-width: 576px) {
-		    .calendarItem {
-		        font-size: 0px !important;
-		        line-height: 30px !important;
-		    }
-		    .calendarItem::before {
-		        content: '  ';
-		        display:block;
-		        height: 10px;
-		        width: 10px;
-		        border-radius: 50%;
-		        background-color: blue;
-		        background-color: var(--primary);
-		    }
-		}
-	</style>
+	<link rel="stylesheet" href="swiper.css">
+  <link rel="stylesheet" href="swipercss.css">
 </head>
-<body>
-	<div class="container">
-	<table id="calendar" class="calendar" style="display:table;" cellspacing="0" cellpadding="3" border="0"><tbody><tr><td class="subheader">Sun</td><td class="subheader">Mon</td><td class="subheader">Tue</td><td class="subheader">Wed</td>
-		<td class="subheader">Thu</td><td class="subheader">Fri</td><td class="subheader">Sat</td></tr><tr><td class="date " valign="top" height="70" align="left">1 <a href="index.cfm?p=d.0&amp;adddate=2019-12-1&amp;edit=add&amp;cid=0" class="noprint"><img src="/		RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">2 <a href="index.cfm?p=d.0&amp;adddate=2019-12-2&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">3 <a href="index.cfm?p=d.0&amp;adddate=2019-12-3&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">4 <a href="index.cfm?p=d.0&amp;adddate=2019-12-4&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td>
-		<td class="date " valign="top" height="70" align="left">5 <a href="index.cfm?p=d.0&amp;adddate=2019-12-5&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
-					<a href="/d/432/Public-Meeting">Public Meeting</a>
-					12:00 p - 2:00 p
-			</div>
-		</td>
-		<td class="date " valign="top" height="70" align="left">6 <a href="index.cfm?p=d.0&amp;adddate=2019-12-6&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
-					<a href="/d/532/Public-Meeting">Non-Public Meeting</a>
-					12:00 p - 2:00 p
-			</div>
-			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
-					<a href="/d/632/Public-Meeting">Non-Public Meeting</a>
-					12:00 p - 2:00 p
-			</div>
-		</td>
-		<td class="date " valign="top" height="70" align="left">7 <a href="index.cfm?p=d.0&amp;adddate=2019-12-7&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
-					<a href="/d/632/Public-Meeting">Non-Public Meeting</a>
-					12:00 p - 2:00 p
-			</div>
-		</td></tr><tr><td class="date " valign="top" height="70" align="left">8 <a href="index.cfm?p=d.0&amp;adddate=2019-12-8&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">9 <a href="index.cfm?p=d.0&amp;adddate=2019-12-9&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">10 <a href="index.cfm?p=d.0&amp;adddate=2019-12-10&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date current" valign="top" height="70" align="left">11 <a href="index.cfm?p=d.0&amp;adddate=2019-12-11&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">12 <a href="index.cfm?p=d.0&amp;adddate=2019-12-12&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">13 <a href="index.cfm?p=d.0&amp;adddate=2019-12-13&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">14 <a href="index.cfm?p=d.0&amp;adddate=2019-12-14&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td></tr><tr><td class="date " valign="top" height="70" align="left">15 <a href="index.cfm?p=d.0&amp;adddate=2019-12-15&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
-					<a href="/d/732/Public-Meeting">Another-Public Meeting</a>
-					12:00 p - 2:00 p
-			</div>
-			<div class="calendarItem calendarCatID_3 calendarTopicID_0" style="" title="">
-					<a href="/d/832/Public-Meeting">Help Meeting</a>
-					12:00 p - 2:00 p
-			</div>
-		</td><td class="date " valign="top" height="70" align="left">16 <a href="index.cfm?p=d.0&amp;adddate=2019-12-16&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">17 <a href="index.cfm?p=d.0&amp;adddate=2019-12-17&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">18 <a href="index.cfm?p=d.0&amp;adddate=2019-12-18&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">19 <a href="index.cfm?p=d.0&amp;adddate=2019-12-19&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">20 <a href="index.cfm?p=d.0&amp;adddate=2019-12-20&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">21 <a href="index.cfm?p=d.0&amp;adddate=2019-12-21&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td></tr><tr><td class="date " valign="top" height="70" align="left">22 <a href="index.cfm?p=d.0&amp;adddate=2019-12-22&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">23 <a href="index.cfm?p=d.0&amp;adddate=2019-12-23&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">24 <a href="index.cfm?p=d.0&amp;adddate=2019-12-24&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">25 <a href="index.cfm?p=d.0&amp;adddate=2019-12-25&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">26 <a href="index.cfm?p=d.0&amp;adddate=2019-12-26&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">27 <a href="index.cfm?p=d.0&amp;adddate=2019-12-27&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">28 <a href="index.cfm?p=d.0&amp;adddate=2019-12-28&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td></tr><tr><td class="date " valign="top" height="70" align="left">29 <a href="index.cfm?p=d.0&amp;adddate=2019-12-29&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">30 <a href="index.cfm?p=d.0&amp;adddate=2019-12-30&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td class="date " valign="top" height="70" align="left">31 <a href="index.cfm?p=d.0&amp;adddate=2019-12-31&amp;edit=add&amp;cid=0" class="noprint"><img src="/RFassets/ui/add.png" border="0"></a>
-		</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-	</tbody></table>
+<body id="home">
+	<div class="nav-top">
+		<ul class="list-inline m-0">
+			<li class="list-inline-item">
+				<a href="#">List Link Item</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="#">List Link Item</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="#">List Link Item</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="#">List Link Item</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="#">List Link Item</a>
+			</li>
+		</ul>
 	</div>
+	<header class="bg-light">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<img src="site/seal.png" alt="Town Seal" />
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<h2>Massachusetts</h2>
+					<h1>Your Town</h1>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<ul>
+						<li>Town of Your Town</li>
+						<li>14 Main Street, 01301</li>
+						<li>413-554-5544</li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<input class="form-control" type="text" />
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Where the Javascript knows to fix the nav -->
+	<div class="scroll-detect"></div>
+
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+	    <div class="container">
+	        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarNav">
+	            <ul class="navbar-nav ml-auto">
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#">Home</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#">About</a>
+	                </li>
+	                <li class="nav-item dropdown">
+	                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+	                    <div class="dropdown-menu dropdown-menu-left">
+	                        <ul>
+	                            <li class="dropdown-item"><a href="#">Link 1</a></li>
+	                            <li class="dropdown-item"><a href="#">Link 2</a></li>
+	                            <li class="dropdown-item"><a href="#">Link 3</a></li>
+	                        </ul>
+	                    </div>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#">Services</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#">Contact</a>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+	</nav>
+
+	<!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="swiper-img">
+          <img src="site/slide-1.jpg" />
+        </div>
+        <div class="swiper-caption">
+          <h3>Caption Header 1</h3>
+          <p>Caption Subtitle</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-img">
+          <img src="site/slide-2.jpg" />
+        </div>
+        <div class="swiper-caption">
+          <h3>Caption Header 2</h3>
+          <p>Caption Subtitle</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-img">
+          <img src="site/slide-3.jpg" />
+        </div>
+        <div class="swiper-caption">
+          <h3>Caption Header 3</h3>
+          <p>Caption Subtitle</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="swiper.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 0,
+      effect: 'fade',
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+	<section class="hotlinks">
+		<div class="container">
+			<div class="row">
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="far fa-calendar-alt"></i>
+            <div class="hotlinks-item">Calendar</div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="far fa-newspaper"></i>
+            <div class="hotlinks-item">News</div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="fas fa-laptop"></i>
+            <div class="hotlinks-item">Pay Online</div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="far fa-file-alt" aria-hidden="true"></i>
+						<div class="hotlinks-item">Permits</div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="far fa-file-alt" aria-hidden="true"></i>
+						<div class="hotlinks-item">Permits</div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="far fa-file-alt" aria-hidden="true"></i>
+						<div class="hotlinks-item">Permits</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="alert-box">
+	</section>
+
+	<section class="pt-5">
+		<div class="container">
+			<div class="row box-cards">
+				<div class="col-sm-12 col-md-6 col-lg-3">
+					<div class="card mb-3">
+            <div class="card-header">
+                Local News
+            </div>
+            <div class="card-body">
+            	<div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-1.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-2.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-3.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-4.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+            </div>
+	        </div>
+				</div>
+				<div class="col-sm-12 col-md-6 col-lg-3">
+					<div class="card mb-3">
+            <div class="card-header">
+                Latest Events
+            </div>
+            <div class="card-body">
+            	<div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-1.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-2.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-3.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-4.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+            </div>
+	        </div>
+				</div>
+				<div class="col-sm-12 col-md-6 col-lg-3">
+					<div class="card mb-3">
+            <div class="card-header">
+                Downloadable Files
+            </div>
+            <div class="card-body">
+            	<div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-1.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-2.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-3.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-4.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+            </div>
+	        </div>
+				</div>
+				<div class="col-sm-12 col-md-6 col-lg-3">
+					<div class="card mb-3">
+            <div class="card-header">
+                Quick Links
+            </div>
+            <div class="card-body">
+            	<ul>
+								<li>
+									<a href="#">Quick Links Here </a>
+								</li>
+								<li>
+									<a href="#">Quick Links Here </a>
+								</li>
+								<li>
+									<a href="#">Quick Links Here </a>
+								</li>
+								<li>
+									<a href="#">Quick Links Here </a>
+								</li>
+							</ul>
+            </div>
+	        </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<main class="main mt-5">
+		<div class="container">
+			Main Content
+		</div>
+	</main>
+
+	<footer class="foot">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-3">
+					<img src="site/seal.png" alt="Town Seal" />
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<ul>
+						<li>
+							<a href="#">Link At Footer</a>
+						</li>
+						<li>
+							<a href="#">Link At Footer</a>
+						</li>
+						<li>
+							<a href="#">Link At Footer</a>
+						</li>
+						<li>
+							<a href="#">Link At Footer</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-6 col-md-3">
+
+				</div>
+				<div class="col-sm-6 col-md-3">
+
+				</div>
+			</div>
+		</div>
+		<div class="foot-bottom">
+			&copy; Your Town | <a href="#">Montague WebWorks</a>
+		</div>
+	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -197,63 +390,13 @@
             crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.9/SmoothScroll.min.js"></script>
 	<script>
-		let calendar = document.getElementById('calendar');
-		let calItemEnd = (calendar.offsetWidth / 7) * 6
-		// Check if IOS
-		let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-		// Find window width
-		let clientW = window.innerWidth;
-		// Set style
-		let oStyle;
-		// Set style for phone and above
-		if((clientW > 576)){
-			oStyle = '';
-		} else /* Set Style for Phone */{
-			oStyle = '';
-		}
-		// Create DIV with params
-		function oDiv(style, el, addClass){
-			return '<div style="' + style + '" class="append-calendar ' + addClass +'" id="append-calendar">' + el + '</div>';
-		};
-		// If not IOS run code if IOS run other code
-		if(!iOS){
-			// On mouseenter add div [oDIv] with params
-			$( '#calendar' ).find( 'div.calendarItem' ).on('mouseenter', function(event) {
-				let targetInner = this.innerHTML;
-				let target = event.target;
-				oStyle = '';
-				if(target.offsetLeft > (calendar.offsetWidth / 7) * 6){
-					$( target ).append(oDiv(oStyle, targetInner, 'on-end'));
-				} else {
-					$( target ).append(oDiv(oStyle, targetInner, ''));
-				}
-			});
-			// on mouseleave remove div [oDiv]
-			$( '#calendar' ).find( 'div.calendarItem' ).on('mouseleave', function(event) {
-				$( '.append-calendar' ).remove( '.append-calendar' );
-			});
-		} else {
-			// On click add div [oDiv] with params
-			$( '#calendar' ).on('click', function(event) {
-				let targetInner = event.target.innerHTML;
-				let target = event.target;
-				//Check to see if event.target has required class
-				let jTarget = $( event.target ).hasClass('calendarItem');
-				oStyle = '';
-				let oDivCreated = document.getElementById('append-calendar');
-				if( oDivCreated ){
-					// if div already exists remove div
-					$( '.append-calendar' ).remove( '.append-calendar' );
-				} else if ( !oDivCreated ) {
-					// if div doesn't exists and has required class add div [oDiv] with params
-					if(target.offsetLeft > (calendar.offsetWidth / 7) * 6 && jTarget){
-						$( target ).append(oDiv(oStyle, targetInner, 'on-end'));
-					} else if (jTarget) {
-						$( target ).append(oDiv(oStyle, targetInner, ''));
-					}
-				}
-			});
-		}
+		$( document ).scroll(function(event) {
+			if( $( '.scroll-detect' ).offset().top <= window.pageYOffset ){
+				$( '.navbar' ).addClass('nav-scroll');
+			} else {
+				$( '.navbar' ).removeClass('nav-scroll');
+			}
+		})
 	</script>
 </body>
 </html>

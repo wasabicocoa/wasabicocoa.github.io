@@ -1,0 +1,274 @@
+:root {
+  --site: #1B7D1E;
+  --site-accent: #32E638;
+  --dark: #343a40;
+}
+
+
+/*-------------
+--Header
+--------------*/
+
+.head {
+  background: url('site/hero.jpg');
+  background-position: center center;
+  background-size: cover;
+  color: white;
+  position: relative;
+  padding-bottom: 50px;
+}
+.head a {
+  color: white;
+}
+.head ul {
+  list-style: none;
+  padding:0;
+}
+.seal {
+  text-align: right;
+}
+.seal img {
+  width:100px;
+}
+.head::before {
+  position: absolute;
+  content: '';
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: #1B7D1E;
+  background-color: var(--site);
+  opacity: 0.4;
+}
+.head-container {
+  position: relative;
+  width: 1170px;
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  padding-top: 60px;
+  z-index: 10;
+}
+.top-bar {
+  background-color: #1B7D1E;
+  background-color: var(--site);
+  color: white;
+}
+  .top-bar a {
+    color: white;
+  }
+  .top-bar a:hover {
+    opacity: 0.7;
+  }
+@media only screen and (max-width: 767px){
+  .seal {
+    text-align: left;
+  }
+  .head ul {
+    text-align: left;
+  }
+  .head-container {
+    width: 576px;
+  }
+}
+@media only screen and (max-width: 576px){
+  .head {
+    text-align: center;
+  }
+  .seal {
+    text-align: center;
+  }
+  .head ul {
+    text-align: center;
+  }
+  .head-container {
+    padding-top: 0;
+  }
+}
+/*----------------
+--Navbar
+----------------*/
+
+.nav-container {
+  position: relative;
+  top:-25px;
+  z-index: 1170;
+  background-color: rgba(0,0,0,0);
+  height:50px;
+  transition: all 0.2s ease-in-out;
+}
+.nav-absolute {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+#default .nav-container {
+  top:0;
+  height:auto;
+}
+#default .nav-absolute {
+  position: relative;
+}
+.navbar .container {
+  background-color: #343a40;
+  background-color: var(--dark);
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 5px;
+}
+#default .navbar .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.navbar-nav {
+  margin-right: auto;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: rgba(255,255,255,1);
+}
+.navbar .dropdown-menu {
+  background-color: #343a40;
+  background-color: var(--dark);
+}
+  .navbar .dropdown-menu ul {
+    padding:0;
+  }
+    .navbar .dropdown-menu li:hover {
+      background-color: transparent;
+    }
+    .navbar .dropdown-menu li a {
+      color: white;
+    }
+
+.nav-scroll.nav-container {
+  position: fixed;
+  top:0;
+  bottom:auto;
+  left:0;
+  right:0;
+  background-color: #343a40;
+  background-color: var(--dark);
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+.nav-scroll .nav-absolute {
+  position: relative;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+.nav-scroll .container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+@media only screen and (max-width:767px){
+  .nav-container {
+    background-color: #343a40;
+    background-color: var(--dark);
+    height: auto;
+  }
+  .nav-absolute {
+    position: relative;
+  }
+}
+/*------------
+--Hotlinks
+--------------*/
+.hotlinks {
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+  text-align: center;
+}
+.hotlinks a {
+  color: #1B7D1E;
+  color: var(--site);
+  display: block;
+  font-size: 25px;
+}
+
+/*------------
+--Alert-Box
+-------------*/
+
+.alert-box {
+  background-color: red;
+  color: white;
+}
+  .alert-box a {
+    color: white;
+  }
+  .alert-box a:hover {
+    color: white;
+    opacity: 0.7;
+  }
+/*------------
+--Swiper
+--------------*/
+
+.swiper-img img {
+  max-width: 100%;
+}
+
+/*---------------
+--Home Cards
+----------------*/
+
+.box-cards .card-item img {
+  display: none;
+}
+.box-cards .card {
+  border: rgba(27,125,30,0.5) thin solid;
+}
+.box-cards .card-header {
+  background-color: rgba(27,125,30,0.7);
+  border-bottom: #1B7D1E thin solid;
+  border-bottom: rgba(27,125,30,0.5) thin solid;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+}
+.box-cards .card-item {
+  border-bottom: rgba(0,0,0,0.3) thin solid;
+  padding: 5px 0;
+}
+.box-cards ul {
+  list-style: none;
+  padding:0;
+}
+@media only screen and (max-width: 576px){
+  .box-cards .card-item img {
+    display: block;
+  }
+}
+/*--------------
+--Footer
+---------------*/
+
+.foot {
+  color: white;
+  background-color: #333;
+  padding-top: 25px;
+}
+  .foot a {
+    color: white;
+  }
+  .foot a:hover {
+    color: white;
+    opacity: 0.7;
+  }
+
+  .foot li {
+    list-style: none;
+  }
+    .foot li a {
+      display: block;
+    }
+
+.foot-bottom {
+  text-align: center;
+  background-color: black
+}
