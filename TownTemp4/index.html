@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<title>Town Temp 4 | HOME</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="swiper.css">
+  <link rel="stylesheet" href="swipercss.css">
+</head>
+<body id="home">
+	<div class="nav-top">
+		<ul class="list-inline m-0">
+			<li class="list-inline-item">
+				<a href="#">List Link Item</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="#">List Link Item</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="#">List Link Item</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="#">List Link Item</a>
+			</li>
+			<li class="list-inline-item">
+				<a href="#">List Link Item</a>
+			</li>
+		</ul>
+	</div>
+	<header class="bg-light">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<img src="site/seal.png" alt="Town Seal" />
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<h2>Massachusetts</h2>
+					<h1>Your Town</h1>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<ul>
+						<li>Town of Your Town</li>
+						<li>14 Main Street, 01301</li>
+						<li>413-554-5544</li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<input class="form-control" type="text" />
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Where the Javascript knows to fix the nav -->
+	<div class="scroll-detect"></div>
+
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+	    <div class="container">
+	        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarNav">
+	            <ul class="navbar-nav ml-auto">
+	                <li class="nav-item">
+	                    <a class="nav-link active" href="#">Home</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="default.html">Default</a>
+	                </li>
+	                <li class="nav-item dropdown">
+	                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+	                    <div class="dropdown-menu dropdown-menu-left">
+	                        <ul>
+	                            <li class="dropdown-item"><a href="#">Link 1</a></li>
+	                            <li class="dropdown-item"><a href="#">Link 2</a></li>
+	                            <li class="dropdown-item"><a href="#">Link 3</a></li>
+	                        </ul>
+	                    </div>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="../index.html">Title Page</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="#">Contact</a>
+	                </li>
+	            </ul>
+	        </div>
+	    </div>
+	</nav>
+
+	<!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="swiper-img">
+          <img src="site/slide-1.jpg" />
+        </div>
+        <div class="swiper-caption">
+          <h3>Caption Header 1</h3>
+          <p>Caption Subtitle</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-img">
+          <img src="site/slide-2.jpg" />
+        </div>
+        <div class="swiper-caption">
+          <h3>Caption Header 2</h3>
+          <p>Caption Subtitle</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="swiper-img">
+          <img src="site/slide-3.jpg" />
+        </div>
+        <div class="swiper-caption">
+          <h3>Caption Header 3</h3>
+          <p>Caption Subtitle</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="swiper.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 0,
+      effect: 'fade',
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+	<section class="hotlinks">
+		<div class="container">
+			<div class="row">
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="far fa-calendar-alt"></i>
+            <div class="hotlinks-item">Calendar</div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="far fa-newspaper"></i>
+            <div class="hotlinks-item">News</div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="fas fa-laptop"></i>
+            <div class="hotlinks-item">Pay Online</div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="far fa-file-alt" aria-hidden="true"></i>
+						<div class="hotlinks-item">Permits</div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="far fa-file-alt" aria-hidden="true"></i>
+						<div class="hotlinks-item">Permits</div>
+					</a>
+				</div>
+				<div class="col-6 col-sm-6 col-md-2">
+					<a href="/p/27/Licensing">
+						<i class="far fa-file-alt" aria-hidden="true"></i>
+						<div class="hotlinks-item">Permits</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="alert-box">
+	</section>
+
+	<section class="pt-5">
+		<div class="container">
+			<div class="row box-cards">
+				<div class="col-sm-12 col-md-6 col-lg-3">
+					<div class="card mb-3">
+            <div class="card-header">
+                Local News
+            </div>
+            <div class="card-body">
+            	<div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-1.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-2.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-3.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-4.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+            </div>
+	        </div>
+				</div>
+				<div class="col-sm-12 col-md-6 col-lg-3">
+					<div class="card mb-3">
+            <div class="card-header">
+                Latest Events
+            </div>
+            <div class="card-body">
+            	<div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-1.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-2.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-3.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-4.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+            </div>
+	        </div>
+				</div>
+				<div class="col-sm-12 col-md-6 col-lg-3">
+					<div class="card mb-3">
+            <div class="card-header">
+                Downloadable Files
+            </div>
+            <div class="card-body">
+            	<div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-1.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-2.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-3.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+                <div class="card-item">
+	                <div class="card-title">
+	                	<img class="news img-fluid" src="site/news-4.jpg" />
+	                	<a href="#">Card Title</a>
+	                </div>
+	                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, perspiciatis.</p>
+                </div>
+            </div>
+	        </div>
+				</div>
+				<div class="col-sm-12 col-md-6 col-lg-3">
+					<div class="card mb-3">
+            <div class="card-header">
+                Quick Links
+            </div>
+            <div class="card-body">
+            	<ul>
+								<li>
+									<a href="#">Quick Links Here </a>
+								</li>
+								<li>
+									<a href="#">Quick Links Here </a>
+								</li>
+								<li>
+									<a href="#">Quick Links Here </a>
+								</li>
+								<li>
+									<a href="#">Quick Links Here </a>
+								</li>
+							</ul>
+            </div>
+	        </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<main class="main mt-5">
+		<div class="container">
+			Main Content
+		</div>
+	</main>
+
+	<footer class="foot">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-3">
+					<img src="site/seal.png" alt="Town Seal" />
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<ul>
+						<li>
+							<a href="#">Link At Footer</a>
+						</li>
+						<li>
+							<a href="#">Link At Footer</a>
+						</li>
+						<li>
+							<a href="#">Link At Footer</a>
+						</li>
+						<li>
+							<a href="#">Link At Footer</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-6 col-md-3">
+
+				</div>
+				<div class="col-sm-6 col-md-3">
+
+				</div>
+			</div>
+		</div>
+		<div class="foot-bottom">
+			&copy; Your Town | <a href="#">Montague WebWorks</a>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.9/SmoothScroll.min.js"></script>
+	<script>
+		$( document ).scroll(function(event) {
+			if( $( '.scroll-detect' ).offset().top <= window.pageYOffset ){
+				$( '.navbar' ).addClass('nav-scroll');
+			} else {
+				$( '.navbar' ).removeClass('nav-scroll');
+			}
+		})
+	</script>
+</body>
+</html>

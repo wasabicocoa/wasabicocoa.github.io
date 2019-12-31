@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:200&display=swap');
+:root {
+  --site-font: 'Anton', sans-serif;
+  --site-font-accent: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Anton', sans-serif;
+  font-family: var(--site-font);
+}
+
+/*---------------
+--Header
+----------------*/
+.head {
+  background-color: var(--light);
+  border-bottom: rgba(0,0,0,0.3) thin solid;
+  padding: 5px 0;
+  color: rgba(0,0,0,0.7);
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+}
+.head a {
+  color: rgba(0,0,0,0.7);
+}
+  .head a:hover {
+    color: black;
+  }
+.head-container {
+  width: 1500px;
+  max-width: 100%;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+.head-contact {
+  flex: 0 0 50%;
+}
+.head-links {
+  flex: 0 0 50%;
+  text-align: right;
+}
+@media only screen and (max-width: 576px){
+  .head-container {
+    flex-direction: column;
+  }
+  .head-contact {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+  .head-links {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+}
+/*-------------
+--Navbar
+---------------*/
+.navbar {
+  border-bottom: rgba(0,0,0,0.6) thin solid;
+  padding: 15px 0;
+}
+.navbar .container {
+  width: 1500px;
+  max-width: 100%;
+  padding: 0 5%;
+}
+.navbar-brand {
+  font-family: 'Anton', sans-serif;
+  font-family: var(--site-font);
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.nav-link {
+  font-family: 'Josefin Slab', serif;
+  font-family: var(--site-font-accent);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+.navbar-light .navbar-nav .nav-link {
+	color: rgba(0,0,0,1);
+}
+.navbar-light .navbar-nav .nav-link:hover {
+	color: rgba(0,0,0,.5);
+}
+.navbar .dropdown-menu {
+
+}
+.navbar .dropdown-menu ul {
+  padding: 0;
+}
+  .navbar .dropdown-menu li a {
+    font-family: 'Josefin Slab', serif;
+    font-family: var(--site-font-accent);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: rgba(0,0,0,1);
+    display: block;
+  }
+  .navbar .dropdown-menu li a:hover {
+    color: rgba(0,0,0,0.7);
+  }
+.nav-scroll {
+  position: fixed;
+  top:0;
+  bottom:auto;
+  left:0;
+  right:0;
+  z-index: 1170;
+}
+/*---------------
+--Slider
+----------------*/
+
+.slider-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+.slide-row {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: -25%;
+  transition: all 0.3s ease-in-out;
+}
+.slide-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 50%;
+  width:50%;
+  max-width:50%;
+  height: 600px;
+  align-items: center;
+  justify-content: center;
+}
+.slide-item::before {
+  content: '';
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 5;
+}
+.slide-content {
+  position: relative;
+  padding: 0 20px;
+  color: white;
+  font-weight: 600;
+  z-index: 10;
+}
+.slide-left {
+  background: url('site/slide-2.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.slide-middle {
+  background: url('site/slide-1.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.slide-right {
+  background: url('site/slide-3.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+@media only screen and (max-width: 576px){
+  .slide-item {
+    flex: 0 0 100%;
+    width:100%;
+    max-width:100%;
+    height: auto;
+  }
+  .slide-row {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 0% !important;
+  }
+}
+
+/*--------------
+--Other Links
+----------------*/
+.o-links {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+}
+.o-links-container {
+  width: 1500px;
+  max-width: 100%;
+  padding: 0 5%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.o-link-item {
+  flex: 0 0 25%;
+  text-align: center;
+}
+.o-link-item i {
+  font-size: 30px;
+}
+/*---------------
+--Main
+----------------*/
+
+/*---------------
+--Footer
+----------------*/
+
+.foot {
+  background-color: #333;
+  color: white;
+  padding-top: 15px;
+}
+  .foot a {
+    color: white;
+  }
+    .foot a:hover {
+      opacity: 0.7;
+    }
+  .foot ul {
+    list-style: none;
+    padding:0;
+  }
+    .foot ul li a {
+      display: block;
+    }
+.foot-bottom {
+  background-color: black;
+  text-align: center;
+  padding: 10px 0;
+}
