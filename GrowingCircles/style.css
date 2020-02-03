@@ -59,6 +59,7 @@
   border-radius: 50%;
   position: relative;
   z-index: 1171;
+
 }
 .h-img::after {
   content: '';
@@ -77,6 +78,7 @@
   max-width: 100%;
   border-radius: 50%;
   z-index: 10;
+  box-shadow: 3px 3px 6px black;
 }
 .h-title {
   padding-left: 120px;
