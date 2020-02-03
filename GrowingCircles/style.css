@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+:root {
+  --site: #07D765;
+  --site-font: 'Lobster', cursive;
+  --site-font-accent: 'Anton', sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top:0;
+  bottom: auto;
+  left:0;
+  right:0;
+  transition: all 0.2s ease-in-out;
+  border-bottom: var(--site) 2px solid;
+  z-index: 1170;
+}
+.nav-link {
+  font-weight: 600;
+}
+.nav-link:hover {
+  color: var(--site) !important;
+}
+.navbar-brand {
+  color: var(--site) !important;
+  font-family: var(--site-font);
+  font-size: 30px;
+}
+.navbar-nav {
+  justify-content: flex-end;
+}
+.navbar .dropdown-menu ul {
+  padding:0;
+}
+.navbar .dropdown-menu a {
+  display: block;
+  color: black;
+  font-weight: 600;
+}
+.navbar .dropdown-menu a:hover {
+  color: var(--site);
+  text-decoration: none;
+}
+.nav-scroll {
+  background-color: white;
+  border-bottom: var(--site) 2px solid;
+  z-index: 1172;
+}
+/*--------------
+--Header
+---------------*/
+.head .container {
+  width: 100%;
+  max-width: 1700px;
+}
+.h-img {
+  border-radius: 50%;
+  position: relative;
+  z-index: 1171;
+}
+.h-img::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 7px;
+  left: 25px;
+  bottom: -25px;
+  right: -25px;
+  background-color: var(--site);
+  z-index: 5;
+  border-radius: 50%;
+}
+.h-img img {
+  position: relative;
+  max-width: 100%;
+  border-radius: 50%;
+  z-index: 10;
+}
+.h-title {
+  padding-left: 120px;
+}
+.h-title h1 {
+  font-family: var(--site-font);
+  font-size: 55px;
+  color: var(--site);
+}
+.h-title h2 {
+  font-family: var(--site-font-accent);
+}
+.h-title p {
+  font-weight: 300;
+  font-size:1.3rem;
+}
+.border-green {
+  position: relative;
+  top:-55px;
+  border-top: var(--site) 2px solid;
+}
+.d-head {
+  height: 150px;
+  margin-top: 75px;
+  background: url('site/header-mobile.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+/*------------
+--Footer
+-------------*/
+.foot {
+  background-color:#333;
+  color: white;
+  padding-top: 10px;
+  border-top: var(--site) 2px solid;
+}
+  .foot a {
+    color: white;
+  }
+    .foot a:hover {
+      color: white;
+      opacity: 0.7;
+    }
+  .foot ul {
+    list-style: none;
+    padding:0;
+  }
+  .foot li a {
+    display: block;
+    padding: 3px 0;
+  }
+.foot-bottom {
+  background-color: black;
+  padding: 10px 0;
+  text-align: center;
+}
+/*------------
+--Media
+-------------*/
+@media only screen and (max-width: 1199px){
+  .navbar {
+    background-color: white;
+    z-index: 1170;
+  }
+  .h-title {
+    padding-left: 0;
+    text-align: center;
+    padding: 0 15px;
+  }
+  .border-green {
+    top:0;
+  }
+  .h-img {
+    border-radius: 0;
+    height: 200px;
+    overflow: hidden;
+    margin-top: 60px;
+    background: url('site/header-mobile.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+  .h-img::after {
+    border-radius: 0;
+    display: none;
+  }
+  .h-img img {
+    border-radius: 0;
+    width: 100%;
+    display: none;
+  }
+}
