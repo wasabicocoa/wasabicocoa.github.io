@@ -1,0 +1,41 @@
+body { background-image:url(/Content/NetSite_720/_images/bg-floral-retro-2.gif); background-attachment:fixed; background-position:center top; background-color:darkred; }
+
+/*
+body { background-color:black; }
+*/
+div#projGaugeContainer { margin-left: 20px; }
+div#kWGaugeContainer { margin-left: 20px; }
+div.solar { text-align:center; }
+div.solar h3 { background-color:darkgreen; padding:5px; color:white; }
+
+
+/*
+american_flag_picture.jpg
+vote_drum.jpg
+bg_autumn_leaves_1.jpg
+bg-flowerbutterfly.jpg
+american_flag_picture.jpg
+bg-floral-pink-blue.gif
+bg-light-indigo.gif
+bg-winter-branches.jpg
+bg-xmas.jpg
+leprechaun.jpg
+
+background-repeat:repeat-x; 
+
+body { background-color:green; }
+body { background-image:url(/content/NetSite_720/_images/waving-flag.jpg); background-attachment:fixed; }
+body { background-color:black; }
+*/
+
+div.box_birthday { border:2px solid darkblue; padding:15px; margin:15px; background-color:#ffe; }
+
+div.box_nav_group_c a { font-size:18px; }
+div.box_nav_group_c a:hover { text-decoration:none; color:darkred; }
+div.box_nav_group_1 a:hover { text-decoration:none; color:darkred; }
+div.box_nav_group_1 a { line-height:1.3em; }
+
+ul.listGroupCorks li { margin:15px 0px; }
+
+
+

@@ -1,0 +1,1927 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>MontagueMA.Net</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <script type="text/javascript" async="" src="MontagueMA.net_files/ga.js"></script>
+    <script src="MontagueMA.net_files/boxover.js" type="text/javascript"></script>
+    <script language="Javascript1.2">
+	<!--    //
+        function invertAll(group) {
+            for (var i = 0; i < group.length; i++) {
+                group[i].checked = group[i].checked ? false : true;
+            }
+        }
+        function checkAll(field) {
+            for (i = 0; i < field.length; i++)
+                field[i].checked = true;
+        }
+        function uncheckAll(field) {
+            for (i = 0; i < field.length; i++)
+                field[i].checked = false;
+        }
+        function FP_preloadImgs() {//v1.0
+            var d = document, a = arguments; if (!d.FP_imgs) d.FP_imgs = new Array();
+            for (var i = 0; i < a.length; i++) { d.FP_imgs[i] = new Image; d.FP_imgs[i].src = a[i]; }
+        }
+        function FP_swapImg() {//v1.0
+            var doc = document, args = arguments, elm, n; doc.$imgSwaps = new Array(); for (n = 2; n < args.length;
+                n += 2) {
+                    elm = FP_getObjectByID(args[n]); if (elm) {
+                    doc.$imgSwaps[doc.$imgSwaps.length] = elm;
+                        elm.$src = elm.src; elm.src = args[n + 1];
+                    }
+            }
+        }
+        function FP_getObjectByID(id, o) {//v1.0
+            var c, el, els, f, m, n; if (!o) o = document; if (o.getElementById) el = o.getElementById(id);
+            else if (o.layers) c = o.layers; else if (o.all) el = o.all[id]; if (el) return el;
+            if (o.id == id || o.name == id) return o; if (o.childNodes) c = o.childNodes; if (c)
+                for (n = 0; n < c.length; n++) { el = FP_getObjectByID(id, c[n]); if (el) return el; }
+            f = o.forms; if (f) for (n = 0; n < f.length; n++) {
+                els = f[n].elements;
+                for (m = 0; m < els.length; m++) { el = FP_getObjectByID(id, els[n]); if (el) return el; }
+            }
+            return null;
+        }
+        // html file-upload animation
+        function Switch() {
+            setTimeout("animSwitch()", 100);
+        }
+        function animSwitch() {
+            document.animupload.src = '_images/ui/animupload1.gif';
+            document.animupload.alt = 'Uploading, please wait.';
+            document.animupload.title = 'Uploading, please wait.';
+        }
+        // un-hide the dropdowns
+        function switchDiv(div_id) {
+            var style_sheet = getStyleObject(div_id);
+            if (style_sheet) {
+                hideAll();
+                changeObjectVisibility(div_id, "visible");
+            }
+            else {
+                alert("sorry, this only works in browsers that do Dynamic HTML");
+            }
+        }
+
+        // calendar pop-ups
+        var win;
+        function popUp(URL) {
+            day = new Date();
+            id = day.getTime();
+            eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=200,height=800');");
+        }
+        function OpenWin(URL) {
+            window.open(URL, 'win', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=550,height=400');
+        }
+        function OpenWinHelp(URL) {
+            window.open(URL, 'win', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=650,height=400');
+        }
+        // ftp upload pop-up window
+        function OpenWin2(URL) {
+            ftp_up_0 = window.open(URL, 'ftp_0', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=570,height=550');
+        }
+        function OpenWinFTPDownload(URL) {
+            window.open(URL, 'ftp', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=880,height=550');
+        }
+
+        myFTPwin = "";
+        FTPwin_num = 0;
+
+        function OpenFTPWin(URL) {
+            myFTPwin_0 = window.open(URL, 'ftp_0' + FTPwin_num, 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=590,height=650');
+            FTPwin_num++;
+        }
+        function OpenSetupWin(URL) {
+            myFTPwin_0 = window.open(URL, 'ftp_0' + FTPwin_num, 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=750,height=600');
+            FTPwin_num++;
+        }
+        myFTPwinDown = "";
+        FTPwinDown_num = 0;
+        function OpenFTPWinDown(URL) {
+            myFTPwinDown_0 = window.open(URL, 'ftpDown_0' + FTPwinDown_num, 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=880,height=550');
+            FTPwinDown_num++;
+        }
+
+        /* return a collection of elements that match a supplied class and element type */
+        function getElementsByClassName(className, elementType) {
+            var resultCollection = [];
+            if (className && elementType && className != '' && elementType != '') {
+                var elementCollection = document.getElementsByTagName(elementType);
+                for (var loop = 0, max = elementCollection.length; loop < max; loop++) {
+                    if (elementCollection[loop].className.indexOf(className) > -1)
+                        resultCollection[resultCollection.length] = elementCollection[loop];
+                }
+            }
+            return resultCollection;
+        }
+
+        function hlLayer(myStyle, what) {
+            var myElementType = myStyle.split('.')[0];
+            var myClassName = myStyle.split('.')[1];
+            var elementCollection = getElementsByClassName(myClassName, myElementType);
+            for (var loop = 0, max = elementCollection.length; loop < max; loop++) {
+                elementCollection[loop].style.border = what;
+            }
+        }
+
+        function toggleLayer(whichLayer, what) {
+            if (document.getElementById) {
+                // this is the way the standards work
+                var style2 = document.getElementById(whichLayer).style;
+                style2.display = style2.display ? "" : what;
+            }
+            else if (document.all) {
+                // this is the way old msie versions work
+                var style2 = document.all[whichLayer].style;
+                style2.display = style2.display ? "" : what;
+            }
+            else if (document.layers) {
+                // this is the way nn4 works
+                var style2 = document.layers[whichLayer].style;
+                style2.display = style2.display ? "" : what;
+            }
+        }
+
+        // -->
+    </script>
+    <script type="text/javascript" src="MontagueMA.net_files/swfobject.js"></script>
+    <script type="text/javascript">
+        var flashvars = {};
+        var params = {};
+        var attributes = {};
+        attributes.id = "oxylusflash";
+        params.allowScriptAccess = "always";
+        params.bgColor = "#ffffff";
+
+        // set here below the path to resolve all the relative paths in the player if you want to store it in a different folder
+        params.base = "";
+
+        // change here below the width and height
+        var embedWidth = "210";
+        var embedHeight = "109";
+
+        swfobject.embedSWF("mp3player.swf", "flashAlternativeContent", embedWidth, embedHeight, "9.0.0", "/js/expressInstall.swf", flashvars, params, attributes);
+    </script>
+    <style type="text/css" media="screen">
+        #flashAlternativeContent {
+            visibility: hidden
+        }
+
+        #flashAlternativeContent {
+            visibility: visible
+        }
+    </style>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="MontagueMA.net_files/jsapi"></script>
+    <script type="text/javascript">
+        var solarizeTown = 'Montague';
+        var solarizeMaxProj = 100;
+        var solarizeMaxKW = 300;
+
+        // Define query language.
+        var projQueryString = 'SELECT "Projects", B WHERE A = "' + solarizeTown + '"';
+        var kWQueryString = 'SELECT "kW", C WHERE A = "' + solarizeTown + '"';
+
+        // Load the Visualization API and the piechart package.
+        google.load('visualization', '1', { 'packages': ['gauge'] });
+
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.setOnLoadCallback(drawVisualization);
+
+        function drawVisualization() {
+            //create projects wrapper
+            var projWrapper = new google.visualization.ChartWrapper({
+                chartType: 'Gauge',
+                dataSourceUrl: 'https://docs.google.com/spreadsheet/tq?range=A1%3AD15&key=0AoKvEUrRrKPqdGNSVDBQNUdmdWVFS1h2dkdVYUVqREE&gid=0&headers=-1',
+                query: projQueryString,
+                containerId: 'projGaugeContainer',
+                options: {
+                    width: 120, height: 120,
+                    redFrom: 50, redTo: solarizeMaxProj,
+                    yellowFrom: 30, yellowTo: 50,
+                    minorTicks: 5,
+                    max: solarizeMaxProj
+                }
+            });
+
+
+            projWrapper.draw();
+
+            //create capacity wrapper
+            var capWrapper = new google.visualization.ChartWrapper({
+                chartType: 'Gauge',
+                dataSourceUrl: 'https://docs.google.com/spreadsheet/tq?range=A1%3AD15&key=0AoKvEUrRrKPqdGNSVDBQNUdmdWVFS1h2dkdVYUVqREE&gid=0&headers=-1',
+                query: kWQueryString,
+                containerId: 'kWGaugeContainer',
+                options: {
+                    width: 120, height: 120,
+                    redFrom: 250, redTo: solarizeMaxKW,
+                    yellowFrom: 50, yellowTo: 250,
+                    minorTicks: 10,
+                    max: solarizeMaxKW
+                }
+            });
+
+            capWrapper.draw();
+        }
+
+    </script>
+    <script src="MontagueMA.net_files/a" type="text/javascript"></script>
+    <style>
+        :root {
+            --blue: #007bff;
+            --indigo: #6610f2;
+            --purple: #6f42c1;
+            --pink: #e83e8c;
+            --red: #dc3545;
+            --orange: #fd7e14;
+            --yellow: #ffc107;
+            --green: #28a745;
+            --teal: #20c997;
+            --cyan: #17a2b8;
+            --white: #fff;
+            --gray: #6c757d;
+            --gray-dark: #343a40;
+            --primary: #007bff;
+            --secondary: #6c757d;
+            --success: #28a745;
+            --info: #17a2b8;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --breakpoint-xs: 0;
+            --breakpoint-sm: 576px;
+            --breakpoint-md: 768px;
+            --breakpoint-lg: 992px;
+            --breakpoint-xl: 1200px;
+            --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+        body {
+            background-color: #f0f0f0;
+        }
+        /*--------------------------
+        --Acordian
+        ---------------------------*/
+        .glyphicon {
+            margin-right: 10px;
+        }
+
+        .panel-body {
+            padding: 0px;
+        }
+
+            .panel-body table tr td {
+                padding-left: 15px
+            }
+
+            .panel-body .table {
+                margin-bottom: 0px;
+            }
+        /*-------------------------
+        --Category
+        --------------------------*/
+        .panel-group a {
+            display: block;
+        }
+        .card-header h4 {
+            font-size: 1.2rem;
+        }
+        .sticky-top-2 {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 4rem;
+            z-index: 1020;
+        }
+        /*--------------------------
+        --Mobile Nav
+        --------------------------*/
+        .mobile-nav {
+            display: none;
+        }
+        @media only screen and (max-width: 992px) {
+            .mobile-nav {
+                display: initial;
+            }
+
+            .mobile-display-no {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Header/Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">MontagueMa.Net</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Groups</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign Up</a>
+                    </li>
+                </ul>
+                <form class="form-inline ml-auto">
+                    <input type="text" class="form-control mr-2" placeholder="Search">
+                    <button class="btn btn-outline-light">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--Mobile Nav-->
+    <nav class="navbar navbar-expand-lg mobile-nav navbar-dark bg-dark fixed-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">Groups</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mobileNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mobileNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Category One</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Category Two</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Category Three</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Category Four</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Container -->
+    <div class="container mt-5">
+        <div class="row">
+
+            <div class="col-sm-12 col-md-3">
+                <!-- Account -->
+                <div class="card mt-3 bg-info text-light mb-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Login Here</h4>
+                        <form>
+                            <div class="form-group">
+                                <input class="form-control mr-2 mb-1" type="text" id="username" placeholder="Enter Username" />
+                                <input class="form-control" type="password" id="password" placeholder="Enter Password" />
+                                <p><a class="text-dark" href="#">Forgot Password or Username?</a></p>
+                                <button class="btn btn-outline-light" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Accordian -->
+                <div class="panel-group sticky-top-2 mobile-display-no" id="accordion">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    <span class="glyphicon glyphicon-folder-close">
+                                    </span>Category One
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse show">
+                            <div class="card-body">
+                                    <a href="#">Montague-Palooza</a>
+                                    <a href="#">Local & US Politics</a>
+                                    <a href="#">SoapBox Derby</a>
+                                    <a href="#">Mutton and Mead!</a>
+                                    <a href="#">Buy & Sell & Jobs</a>
+                                    <a href="#">Real Estate</a>
+                                    <a href="#">Local Entertainment</a>
+                                    <a href="#">Restaurant Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                    <span class="glyphicon glyphicon-th">
+                                    </span>Category Two
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="card-body">
+                                    <a href="#">MCTV </a>
+                                    <a href="#">Montague Reporter </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                    <span class="glyphicon glyphicon-user">
+                                    </span>Category Three
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="card-body">
+                                    <a href="#">Shea Theater </a>
+                                    <a href="#">Montague Common Hall </a>
+                                    <a href="#">TF RiverCulture </a>
+                                    <a href="#">Business Association </a>
+                                    <a href="#">The Brick House </a>
+                                    <a href="#">Discovery Center </a>
+                                    <a href="#">Senior Center </a>
+                                    <a href="#">Historical Society </a><
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                    <span class="glyphicon glyphicon-file">
+                                    </span>Category Four
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="card-body">
+                                    <a href="#">Transition Montague </a>
+                                    <a href="#">Backyard Gardeners </a>
+                                    <a href="#">Local Farms </a>
+                                    <a href="#">Farmers Markets </a>
+                                    <a href="#">Clean Energy </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                                    <span class="glyphicon glyphicon-file">
+                                    </span>Category Five
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse">
+                            <div class="card-body">
+                                    <a href="#">Town Issues </a>
+                                    <a href="#">Gill Montague School </a>
+                                    <a href="#">Policy Wonk Place </a>
+                                    <a href="#">Montague Libraries </a>
+                                    <a href="#">Parks & Rec </a>
+                                    <a href="#">Cable Advisory </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                                    <span class="glyphicon glyphicon-file">
+                                    </span>Category Six
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse">
+                            <div class="card-body">
+                                    <a href="#">Churches & Spiritual </a>
+                                    <a href="#">Montague Potlucks </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Feed -->
+            <div class="col-sm-12 col-md-9 col-lg-6">
+                <div class="box_corkboard">
+
+                    <div class="head">
+                        <div class="add" style="float:right;">
+                        </div>
+                        <a href="http://www.montaguema.net/corkboard.cfm">All Corkboard Posts</a>
+                    </div>
+
+                    <div class="content" style="">
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;ID=39318&amp;g=203"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203">Buy &amp; Sell &amp; Jobs</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;g=203">Buy, Sell, Trade, Tag Sales</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=4082"><b>plowfrau</b></a> -
+                                        Sun, Nov 11, 2018, 10:56 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39318&amp;cs=7&amp;digest=no"><strong>Women’s Saucony Tennis Shoes For Sale</strong></a><br>
+                                        Hi,
+
+                                        I have posted these beautiful NEW shoes on Craigslist if you'd like to
+                                        see a photo of them. They are simply Too Bright for my liking. I bought
+                                        them last Spring and wore them 3 times before realizing they were too
+                                        bright and I wouldn't wear the...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39318&amp;cs=7&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;ID=39317&amp;g=192"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192">MCTV</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;g=192">Public Access</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=3729"><b>MCTV</b></a> -
+                                        Fri, Nov 9, 2018, 5:20 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39317&amp;cs=49&amp;digest=no"><strong>November 12-16,2018</strong></a><br>
+                                        Now that Jo Comerford has been elected to the Massachusetts State
+                                        Senate, perhaps you’ll take an interest in this opportunity to learn
+                                        more about her plans for this position: visit MontagueTV.org and click
+                                        “Latest Videos” to see Jo Comerford’s speech...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39317&amp;cs=49&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;ID=39316&amp;g=203"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203">Buy &amp; Sell &amp; Jobs</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;g=203">Buy, Sell, Trade, Tag Sales</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=4082"><b>plowfrau</b></a> -
+                                        Fri, Nov 9, 2018, 10:32 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39316&amp;cs=7&amp;digest=no"><strong>Winter Tires Rims For Sale</strong></a><br>
+                                        These tires were purchased in 2016 and they are in very good condition.
+                                        I decided to stop having to change tires every season and bought
+                                        all-season this year. So, nothing wrong with the ones I'm selling!
+
+                                        Continental Winter tires. 195/65R15   5 lu...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39316&amp;cs=7&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;thread=39311&amp;g=203">Thread</a>
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;ID=39315&amp;g=203"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203">Buy &amp; Sell &amp; Jobs</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;g=203">Buy, Sell, Trade, Tag Sales</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=4082"><b>plowfrau</b></a> -
+                                        Fri, Nov 9, 2018, 10:31 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39315&amp;cs=7&amp;digest=no"><strong>Pellet Stove Needs Repair Shutesbury</strong></a><br> We use The Fireplace in Whately. They do excellent work and price fairly.
+
+                                        Good luck!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=9&amp;thread=39312&amp;g=195">Thread</a>
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=9&amp;ID=39314&amp;g=195"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=195">Montague-Palooza</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=9&amp;g=195">General Discussion</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=4082"><b>plowfrau</b></a> -
+                                        Fri, Nov 9, 2018, 10:29 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=195&amp;ID=39314&amp;cs=9&amp;digest=no"><strong>This Sat. Joy’s Pottery Studio Sale!</strong></a><br> Hi Joy!
+                                        I'm hoping to see you tomorrow at your pottery sale.
+
+                                        Sita
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;ID=39313&amp;g=192"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192">MCTV</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;g=192">Public Access</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=3729"><b>MCTV</b></a> -
+                                        Tue, Nov 6, 2018, 12:01 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39313&amp;cs=49&amp;digest=no"><strong>November 5-9, 2018</strong></a><br>
+                                        Daylight Savings has ended! Luckily, Montague TV is here to help you
+                                        savor local festivities through the chilly, dark evenings ahead.
+
+                                        -Footage from the 3rd Annual Migration Festival, a night of music, food
+                                        and dance at the Great Falls Discovery Ce...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39313&amp;cs=49&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=9&amp;thread=39312&amp;g=195">Thread</a>
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=9&amp;ID=39312&amp;g=195"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=195">Montague-Palooza</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=9&amp;g=195">General Discussion</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=4805"><b>joy</b></a> -
+                                        Mon, Nov 5, 2018, 9:15 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=195&amp;ID=39312&amp;cs=9&amp;digest=no"><strong>This Sat. Joy’s Pottery Studio Sale!</strong></a><br> Fall Greetings!
+                                        You are invited to my November 10th Pottery Studio Sale!!
+
+                                        Put some pottery on your Thanksgiving table or give a pot as a gift.
+                                        Support Local and hand-made!
+                                        It would be wonderful to see you!
+
+                                        Joy Friedman Pottery
+                                        Sat. Nov....
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=195&amp;ID=39312&amp;cs=9&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;thread=39311&amp;g=203">Thread</a>
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;ID=39311&amp;g=203"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203">Buy &amp; Sell &amp; Jobs</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;g=203">Buy, Sell, Trade, Tag Sales</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=5470"><b>jporcelli</b></a> -
+                                        Fri, Nov 2, 2018, 1:28 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39311&amp;cs=7&amp;digest=no"><strong>Pellet Stove Needs Repair Shutesbury</strong></a><br> Hello neighbors,
+
+                                        We are looking for someone to repair a pellet stove at our Lake Wyola rental.  Ideas?
+
+                                        Thanks!
+
+                                        Janet &amp; George
+                                        Old Sunderland Road
+                                        Montague
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=9&amp;ID=39310&amp;g=195"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=195">Montague-Palooza</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=9&amp;g=195">General Discussion</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=4523"><b>BrooksBend</b></a> -
+                                        Sat, Oct 27, 2018, 6:40 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=195&amp;ID=39310&amp;cs=9&amp;digest=no"><strong>Housing</strong></a><br>
+                                        Hello Friends and Neighbors, a very good friend, Mary Fanelli, is
+                                        looking for a quiet place to live in or near Montague Center where she
+                                        can do some contemplation and writing for the winter.
+
+                                        Mary has travelled extensively in Ireland and France....
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=195&amp;ID=39310&amp;cs=9&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=9&amp;ID=39309&amp;g=195"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=195">Montague-Palooza</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=9&amp;g=195">General Discussion</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=5424"><b>newbie</b></a> -
+                                        Fri, Oct 26, 2018, 7:39 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=195&amp;ID=39309&amp;cs=9&amp;digest=no"><strong>Holy Crap</strong></a><br>
+                                        Just came from checking my old dude. The hospitals are running scared.
+                                        Afraid they will have to worry about patients not profit. FMC didn't
+                                        fold when the nurses got patient ratio  in their last contract. My old
+                                        dudes pal was taken by ambulance a whil...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=195&amp;ID=39309&amp;cs=9&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;ID=39308&amp;g=192"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192">MCTV</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;g=192">Public Access</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=3729"><b>MCTV</b></a> -
+                                        Fri, Oct 26, 2018, 4:44 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39308&amp;cs=49&amp;digest=no"><strong>October 29-november 2018</strong></a><br>
+                                        The latest from MCTV this week is the October 14th presentation,
+                                        "Naming the Land: History of the Pioneer Valley Association," at the
+                                        Great Falls Discovery Center. In this talk, Mike Jackson helps us
+                                        understand the history of the phrase "Pioneer Vall...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39308&amp;cs=49&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;ID=39307&amp;g=192"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192">MCTV</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;g=192">Public Access</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=3729"><b>MCTV</b></a> -
+                                        Mon, Oct 22, 2018, 9:54 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39307&amp;cs=49&amp;digest=no"><strong>October 22-26, 2018</strong></a><br>
+                                        This week at Montague Community TV, we'd like to give you a tip on how
+                                        to stay informed on local politics from a computer or smartphone. Gill
+                                        and Montague Selectboard meetings can be found on our Latest Videos page
+                                        at https://montaguetv.org/p/76/Late...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39307&amp;cs=49&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;ID=39305&amp;g=192"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192">MCTV</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;g=192">Public Access</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=3729"><b>MCTV</b></a> -
+                                        Sat, Oct 13, 2018, 7:41 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39305&amp;cs=49&amp;digest=no"><strong>October 15-19, 2018</strong></a><br> We’ve got some great new cultural videos available for your this week on our website and local channel 17!
+
+                                        First, join the band Rose Cora Perry, as they are interviewed on The Untold Truth before their recent show at The Rendezvous.
+
+                                        Then watch ...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39305&amp;cs=49&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=82&amp;ID=39304&amp;g=202"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=202">Discovery Center</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=82&amp;g=202">Coming Events</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=4413"><b>clegg</b></a> -
+                                        Wed, Oct 10, 2018, 2:12 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=202&amp;ID=39304&amp;cs=82&amp;digest=no"><strong>October Events</strong></a><br> October 2018 program listings at the Great Falls Discovery Center
+
+                                        A Museum about the Connecticut River’s Natural, Cultural, and Industrial History
+
+
+                                        All programs are free to the public unless otherwise noted, such as a suggested donation. Free...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=202&amp;ID=39304&amp;cs=82&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=21&amp;ID=39303&amp;g=203"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203">Buy &amp; Sell &amp; Jobs</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=21&amp;g=203">Help Wanted and Service Referrals</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=5512"><b>vern</b></a> -
+                                        Tue, Oct 9, 2018, 4:04 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39303&amp;cs=21&amp;digest=no"><strong>Help Needed</strong></a><br>
+                                        Need someone to work on leaks on Slate Roof and other misc. "handyman"
+                                        work in Turners including gutter installation and regular roof repairs.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;ID=39302&amp;g=192"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192">MCTV</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;g=192">Public Access</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=3729"><b>MCTV</b></a> -
+                                        Tue, Oct 9, 2018, 12:07 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39302&amp;cs=49&amp;digest=no"><strong>October 8-12, 2018</strong></a><br>
+                                        This week, enjoy the following new videos on our website!
+
+                                        Exploded View 9/16/18: Exploded view is a group of women artists working
+                                        to create original performances and exhibitions. This performance was
+                                        part of the Paper Jam exhibit at the Great Fal...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39302&amp;cs=49&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;ID=39301&amp;g=203"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203">Buy &amp; Sell &amp; Jobs</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;g=203">Buy, Sell, Trade, Tag Sales</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=3660"><b>PLipke</b></a> -
+                                        Mon, Oct 8, 2018, 2:53 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39301&amp;cs=7&amp;digest=no"><strong>Selling Solid Wood Bookcase, Two Bureaus, Wooden Step Ladder</strong></a><br>
+                                        For sale: 48" X 31" plain pine, well built bookcase for $25 or b.o.
+
+                                        Also two bureaus, with solid wood drawers and face frame, sides and top
+                                        are plywood. Each bureau is L 32" X H 31" X 19" deep. $70 for the pair,
+                                        or b.o.
+
+                                        Photos available via...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39301&amp;cs=7&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=21&amp;ID=39300&amp;g=203"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203">Buy &amp; Sell &amp; Jobs</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=21&amp;g=203">Help Wanted and Service Referrals</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=5037"><b>maria</b></a> -
+                                        Sun, Oct 7, 2018, 12:01 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39300&amp;cs=21&amp;digest=no"><strong>Cna/pca/hha/driver/cook/clening Available</strong></a><br> CNA, HHA, Personal Cook, PCA, Driver, Personal Assistant.
+
+                                        I offer care for your loved ones.
+                                        Cooking, driving, companionship, home management etc.
+                                        Let me help you!
+                                        Part time.
+                                        Not an agency.
+                                        M,W, F.  9-5pm
+                                        Maria B
+                                        Leverett
+                                        413-367-4336
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=21&amp;ID=39299&amp;g=203"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203">Buy &amp; Sell &amp; Jobs</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=21&amp;g=203">Help Wanted and Service Referrals</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=4277"><b>Sarah</b></a> -
+                                        Sat, Oct 6, 2018, 9:53 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39299&amp;cs=21&amp;digest=no"><strong>Seeking Helping Raking Gravel Today Tomorrow</strong></a><br>
+                                        Hi folx,
+
+                                        We're needing help today or tomorrow (Saturday or Sunday) raking gravel
+                                        on a construction site.  A few hours work.  $15/hr.  Please call Woody
+                                        at 413-801-2100.
+
+                                        Thank you!
+
+                                        Sarah and Woody Bliss
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;ID=39298&amp;g=203"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203">Buy &amp; Sell &amp; Jobs</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=7&amp;g=203">Buy, Sell, Trade, Tag Sales</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=3660"><b>PLipke</b></a> -
+                                        Thu, Oct 4, 2018, 10:37 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39298&amp;cs=7&amp;digest=no"><strong>Golf Tdi/greasecar For Sale</strong></a><br>
+                                        Very good condition, well maintained 2001 VW Golf TDI/Greasecar, 4 door
+                                        hatchback 200,000 miles: starts and runs like a top, non-smoking
+                                        owners, car is clean inside and out
+                                        1.	52-54 mpg on diesel, biodiesel and/or waste vegetable oil (wvo) with
+                                        prof...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39298&amp;cs=7&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;ID=39297&amp;g=192"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192">MCTV</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;g=192">Public Access</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=3729"><b>MCTV</b></a> -
+                                        Tue, Oct 2, 2018, 1:05 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39297&amp;cs=49&amp;digest=no"><strong>October 1-5, 2018</strong></a><br>
+                                        It is confounding how fast the arrival of the new season fades the old
+                                        season to a distant memory. With Montague TV’s coverage of local events
+                                        we do our best to keep you connected to every season—no matter the
+                                        temperature outside. In our latest video...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39297&amp;cs=49&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=55&amp;ID=39296&amp;g=214"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=214">Real Estate</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=55&amp;g=214">Looking for...</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=5687"><b>chrisgarvin</b></a> -
+                                        Mon, Oct 1, 2018, 12:53 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=214&amp;ID=39296&amp;cs=55&amp;digest=no"><strong>Temporary Garage Space For Storing Car</strong></a><br> Looking to rent garage space Jan. &amp; feb 2019 to store car while away. Preferably Montague area.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;ID=39295&amp;g=192"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192">MCTV</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=49&amp;g=192">Public Access</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=3729"><b>MCTV</b></a> -
+                                        Mon, Sep 24, 2018, 6:01 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39295&amp;cs=49&amp;digest=no"><strong>September 24-28, 2018</strong></a><br>
+                                        Looking for something to do this weekend? Check out the end of the
+                                        exhibits at the Great Falls Discovery center! “PaperJam,” a community
+                                        art show curated by Exploded View, and “On a Roll- the Story of Paper in
+                                        Turners Falls,” are on display through S...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=192&amp;ID=39295&amp;cs=49&amp;digest=no">More...</a>)</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=21&amp;ID=39294&amp;g=203"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203">Buy &amp; Sell &amp; Jobs</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=21&amp;g=203">Help Wanted and Service Referrals</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=3904"><b>stash</b></a> -
+                                        Mon, Sep 24, 2018, 10:28 A
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39294&amp;cs=21&amp;digest=no"><strong>Mig/tig</strong></a><br>
+                                        Morning. Looking for someone with a mig ot tig welder. I have an
+                                        antique strap hinge that needed repair. Spent the weekend on line and
+                                        the size isn't made any more. It isn't a heavy one, it is off of a
+                                        homemade knotty pine closet door. At most it is ...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=203&amp;ID=39294&amp;cs=21&amp;digest=no">More...</a>)</strong>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="item card-body">
+                                <div class="head">
+                                    <div class="add" style="width:auto;float:right;">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=62&amp;thread=39257&amp;g=193">Thread</a>
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=62&amp;ID=39293&amp;g=193"><img src="MontagueMA.net_files/monitor.png" alt="View just this post" title="View just this post" border="0"></a>
+                                    </div>
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=193">Montague Reporter</a>:
+                                    <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;cs=62&amp;g=193">Events</a>
+                                </div>
+                                <div class="content">
+                                    <div style="margin-left:-3px;margin-right:-3px;padding:3px;border-bottom:1px solid gray;">
+                                        <a href="http://www.montaguema.net/show_user.cfm?userID=4413"><b>clegg</b></a> -
+                                        Wed, Sep 19, 2018, 1:05 P
+                                    </div>
+                                    <div class="message">
+                                        <a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=193&amp;ID=39293&amp;cs=62&amp;digest=no"><strong>Trivia Night And Supper For The Reporter</strong></a><br>
+                                        Trivia Night fundraiser for the Montague Reporter has quickly
+                                        approached and is Saturday, September 22, with doors opening at 5:15
+                                        p.m. with food, games and a cash bar
+
+                                        St Kaz on Avenue A in Turners Falls has graciously donated the hall for
+                                        the ev...
+                                        <strong>(<a href="http://www.montaguema.net/corkboard.cfm?gpt=34&amp;g=193&amp;ID=39293&amp;cs=62&amp;digest=no">More...</a>)</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3">
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Locate</h4>
+                        <div><a href="#">All Corkboards</a></div>
+                        <div><a href="#">Montague Calendar</a></div>
+                        <div><a href="#">Local Businesses</a></div>
+                        <div><a href="#">Polls</a></div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body bg-info text-light">
+                        <a class="text-light" href="http://www.montaguema.net/meta.cfm?gpt=34&amp;mt=56">About Us</a> ·
+                        <a class="text-light" href="http://www.montaguema.net/meta.cfm?gpt=34&amp;mt=58">Help!</a> ·
+                        <a class="text-light" href="http://www.montaguema.net/meta.cfm?gpt=34&amp;mt=75">Local websites</a> ·
+                        <a class="text-light" href="http://www.montaguema.net/meta.cfm?gpt=34&amp;mt=59">Privacy</a> ·
+                        <a class="text-light" href="http://www.montaguema.net/meta.cfm?gpt=34&amp;mt=61">User Rights / Policies</a> ·
+                        <a class="text-light" href="http://www.montaguema.net/meta.cfm?gpt=34&amp;mt=63">Subscribing via email</a> ·
+                        <a class="text-light" href="http://www.montaguema.net/meta.cfm?gpt=34&amp;mt=64">Advertise with us</a> ·
+                        <a class="text-light" href="http://www.montaguema.net/meta.cfm?gpt=34&amp;mt=60">Reasons to sign up</a> ·
+                        <a class="text-light" href="http://www.montaguema.net/join.cfm"><b>Sign up now!</b></a>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="http://www.montaguema.net/calendar.cfm?g=0">Montague Calendar</a></h4>
+                        <div class="box_calendar">
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Youth Advisory Committee] body=[Youth ages 10-16 are invited to join the YACers to meet monthly at Carnegie Library to make decisions, volunteer, plan programs, meet new people and make a positive impact in their community. Snacks served!&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/13/18">Youth Advisory Committee</a>
+
+                                <br>
+                                <span class="time">Tue, November 13<br>5:00 PM - 6:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Flow YOGA] body=[Needing to recharge your batteries? You’ve come to the right place. This on-going class offers a rejuvenating journey through breathing exercises, energizing posture sequences, soulful reflection, and deep relaxation. Through continuous practice you will build strength, flexibility and stamina, increasing overall vitality, and cultivating serenity. This is a mixed level class. Some prior yoga experience will benefit but is not necessary. Simply drop-in, or sign up for a bundle of classes.
+’Flow’ or Vinyasa is a dynamic style of Yoga which aligns each movement with breath and links all postures in a smoothly orchestrated continuous flow. Detailed instructions and plenty of variations offered for different abilities and levels help create a safe and supportive environment in which all participants will make progress.
+
+See you in class!
+- Nadya
+More details at: www.sunessenceyoga.com&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/13/18">Flow YOGA</a>
+
+                                <br>
+                                <span class="time">Tue, November 13<br>5:30 PM - 6:45 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Story Time @ Carnegie] body=[Young children of all ages and their families are invited to come and enjoy stories, crafts, music, activities and snacks, with Karen Wartel.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/14/18">Story Time @ Carnegie</a>
+
+                                <br>
+                                <span class="time">Wed, November 14<br>10:15 AM - 11:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Homeschool Science] body=[Hands-On STEM(Science, Technology, Engineering, Math) activities for homeschoolers of all ages and their caregivers, with Angela or special guest, at Carnegie Library. Registration is required to ensure that we have enough supplies for everyone. Call 413-863-3214 or stop by the library.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/14/18">Homeschool Science</a>
+
+                                <br>
+                                <span class="time">Wed, November 14<br>1:00 PM - 2:30 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Meditation with Tahn] body=[Free fall meditation series with Venerable Tahn Pamuto every Wednesday from September 19 through November 28. Open and free to all.  No prior meditation experience needed.
+...
+Tahn may take dana in the form of food or non-cash items (please ask). You may also make a donation to the hall when you attend, or do consider becoming a sustaining member so we can continue to give space for these kinds of community offerings.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/14/18">Meditation with Tahn</a>
+
+                                <br>
+                                <span class="time">Wed, November 14<br>7:00 PM - 8:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Gentle YOGA] body=[Hello everyone,
+
+I am excited to offer a new gentle morning Yoga class: Yoga for Strength and Stress Relief. We begin next week, on November 8th at the Montague Common Hall.
+
+Thursdays 9:15 - 10:30 AM
+
+This class will benefit complete beginners and advancing yogis alike.  We will focus on building core strength, as well as on unwinding physical and mental tension and overwhelm. No experience or equipment necessary.
+
+HOW TO REGISTER
+You can drop-in, or buy a very flexible bundle of classes. http://www.sunessenceyoga.com/buy-yoga-classes/
+
+Since this is a new class and will run on a trial basis, by buying a bundle of classes, you can show your commitment and ensure longevity of the class. The bundles will work for both the Thursday AM and for the Tuesday 5:30PM Flow classes (as well as for Saturday classes in Amherst). If you already purchased classes - they will work for this one.
+
+Drop me a line through the above website if you have any questions at all.
+
+I look forward to seeing many of you soon!
+
+Nadya&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/15/18">Gentle YOGA</a>
+
+                                <br>
+                                <span class="time">Thu, November 15<br>9:15 AM - 10:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Music &amp; Movement for Kids] body=[This weekly series for young children, with Tom Carroll and Laurie Davidson, will take a turn at the Millers Falls Library September through December. Designed for preschoolers and their caregivers.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/15/18">Music &amp; Movement for Kids</a>
+
+                                <br>
+                                <span class="time">Thu, November 15<br>10:00 AM - 10:45 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Woodland MagicalCreatures] body=[Children of all ages and their caregivers are invited to enter our magical realm and build their very own fairy houses, using natural and recycled materials at the Carnegie Library. Snacks will be provided.
+Costumes are encouraged but not required.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/17/18">Woodland MagicalCreatures</a>
+
+                                <br>
+                                <span class="time">Sat, November 17<br>10:30 AM - 12:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Oh Beautiful Glass] body=[An eclectic and exciting glass exhibit
+Leverett Crafts &amp; Arts; 13 Montague Road, Leverett, MA
+Reception: Saturday, November 3rd 4-6pm
+Gallery hours: Saturday &amp; Sunday’s, 1-6pm&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Local Entertainment&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/17/18">Oh Beautiful Glass</a>
+
+                                <br>
+                                <span class="time">Sat, November 17<br>1:00 PM - 6:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=216">Local Entertainment</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Oh Beautiful Glass] body=[An eclectic and exciting glass exhibit
+Leverett Crafts &amp; Arts
+13 Montague Road, Leverett, MA
+Gallery Hours Saturday &amp; Sunday 4-6pm&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Local Entertainment&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/18/18">Oh Beautiful Glass</a>
+
+                                <br>
+                                <span class="time">Sun, November 18<br>1:00 PM - 6:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=216">Local Entertainment</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Flow YOGA] body=[Needing to recharge your batteries? You’ve come to the right place. This on-going class offers a rejuvenating journey through breathing exercises, energizing posture sequences, soulful reflection, and deep relaxation. Through continuous practice you will build strength, flexibility and stamina, increasing overall vitality, and cultivating serenity. This is a mixed level class. Some prior yoga experience will benefit but is not necessary. Simply drop-in, or sign up for a bundle of classes.
+’Flow’ or Vinyasa is a dynamic style of Yoga which aligns each movement with breath and links all postures in a smoothly orchestrated continuous flow. Detailed instructions and plenty of variations offered for different abilities and levels help create a safe and supportive environment in which all participants will make progress.
+
+See you in class!
+- Nadya
+More details at: www.sunessenceyoga.com&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/20/18">Flow YOGA</a>
+
+                                <br>
+                                <span class="time">Tue, November 20<br>5:30 PM - 6:45 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Story Time @ Carnegie] body=[Young children of all ages and their families are invited to come and enjoy stories, crafts, music, activities and snacks, with Karen Wartel.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/21/18">Story Time @ Carnegie</a>
+
+                                <br>
+                                <span class="time">Wed, November 21<br>10:15 AM - 11:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Meditation with Tahn] body=[Free fall meditation series with Venerable Tahn Pamuto every Wednesday from September 19 through November 28. Open and free to all.  No prior meditation experience needed.
+...
+Tahn may take dana in the form of food or non-cash items (please ask). You may also make a donation to the hall when you attend, or do consider becoming a sustaining member so we can continue to give space for these kinds of community offerings.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/21/18">Meditation with Tahn</a>
+
+                                <br>
+                                <span class="time">Wed, November 21<br>7:00 PM - 8:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Gentle YOGA] body=[Hello everyone,
+
+I am excited to offer a new gentle morning Yoga class: Yoga for Strength and Stress Relief. We begin next week, on November 8th at the Montague Common Hall.
+
+Thursdays 9:15 - 10:30 AM
+
+This class will benefit complete beginners and advancing yogis alike.  We will focus on building core strength, as well as on unwinding physical and mental tension and overwhelm. No experience or equipment necessary.
+
+HOW TO REGISTER
+You can drop-in, or buy a very flexible bundle of classes. http://www.sunessenceyoga.com/buy-yoga-classes/
+
+Since this is a new class and will run on a trial basis, by buying a bundle of classes, you can show your commitment and ensure longevity of the class. The bundles will work for both the Thursday AM and for the Tuesday 5:30PM Flow classes (as well as for Saturday classes in Amherst). If you already purchased classes - they will work for this one.
+
+Drop me a line through the above website if you have any questions at all.
+
+I look forward to seeing many of you soon!
+
+Nadya&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/22/18">Gentle YOGA</a>
+
+                                <br>
+                                <span class="time">Thu, November 22<br>9:15 AM - 10:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Libraries Closed] body=[ &lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/22/18">Libraries Closed</a>
+
+                                <br>
+                                <span class="time">Thu, November 22</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Oh Beautiful Glass] body=[An eclectic and exciting glass exhibit
+Leverett Arts &amp; Crafts
+13 Montague Road, Leverett, MA
+Gallery hours: Saturday &amp; Sunday 1 a 6&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Local Entertainment&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/24/18">Oh Beautiful Glass</a>
+
+                                <br>
+                                <span class="time">Sat, November 24<br>1:00 PM - 6:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=216">Local Entertainment</a>
+
+                            </div>
+
+                            <div class="content">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Oh Beautiful Glass, closi] body=[An eclectic and exciting glass exhibit
+Leverett Crafts &amp; Arts
+13 Montague Road, Leverett, MA&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Local Entertainment&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/25/18">Oh Beautiful Glass, closi</a>
+
+                                <br>
+                                <span class="time">Sun, November 25<br>1:00 PM - 6:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=216">Local Entertainment</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Story Time @ Carnegie] body=[Young children of all ages and their families are invited to come and enjoy stories, crafts, music, activities and snacks, with Karen Wartel.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/28/18">Story Time @ Carnegie</a>
+
+                                <br>
+                                <span class="time">Wed, November 28<br>10:15 AM - 11:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Homeschool Science] body=[Hands-On STEM(Science, Technology, Engineering, Math) activities for homeschoolers of all ages and their caregivers, with Angela or special guest, at Carnegie Library. Registration is required to ensure that we have enough supplies for everyone. Call 413-863-3214 or stop by the library.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/28/18">Homeschool Science</a>
+
+                                <br>
+                                <span class="time">Wed, November 28<br>1:00 PM - 2:30 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Meditation with Tahn] body=[Free fall meditation series with Venerable Tahn Pamuto every Wednesday from September 19 through November 28. Open and free to all.  No prior meditation experience needed.
+...
+Tahn may take dana in the form of food or non-cash items (please ask). You may also make a donation to the hall when you attend, or do consider becoming a sustaining member so we can continue to give space for these kinds of community offerings.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/28/18">Meditation with Tahn</a>
+
+                                <br>
+                                <span class="time">Wed, November 28<br>7:00 PM - 8:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Gentle YOGA] body=[Hello everyone,
+
+I am excited to offer a new gentle morning Yoga class: Yoga for Strength and Stress Relief. We begin next week, on November 8th at the Montague Common Hall.
+
+Thursdays 9:15 - 10:30 AM
+
+This class will benefit complete beginners and advancing yogis alike.  We will focus on building core strength, as well as on unwinding physical and mental tension and overwhelm. No experience or equipment necessary.
+
+HOW TO REGISTER
+You can drop-in, or buy a very flexible bundle of classes. http://www.sunessenceyoga.com/buy-yoga-classes/
+
+Since this is a new class and will run on a trial basis, by buying a bundle of classes, you can show your commitment and ensure longevity of the class. The bundles will work for both the Thursday AM and for the Tuesday 5:30PM Flow classes (as well as for Saturday classes in Amherst). If you already purchased classes - they will work for this one.
+
+Drop me a line through the above website if you have any questions at all.
+
+I look forward to seeing many of you soon!
+
+Nadya&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/29/18">Gentle YOGA</a>
+
+                                <br>
+                                <span class="time">Thu, November 29<br>9:15 AM - 10:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Music &amp; Movement for Kids] body=[This weekly series for young children, with Tom Carroll and Laurie Davidson, will take a turn at the Millers Falls Library September through December. Designed for preschoolers and their caregivers.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=11/29/18">Music &amp; Movement for Kids</a>
+
+                                <br>
+                                <span class="time">Thu, November 29<br>10:00 AM - 10:45 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Book Sale] body=[Monthly book sales are held on the first Saturday of each month from 10 a.m. – 1:30 p.m. at the Carnegie Library.  Thousands of sorted books, DVDs, audio books, and CDs are available for $1 or less each.  Benefits the Friends of the Montague Public Libraries.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/01/18">Book Sale</a>
+
+                                <br>
+                                <span class="time">Sat, December 1<br>10:00 AM - 1:30 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Rainbow Contra Dance] body=[Rainbow Contra Dance of Western Massachusetss, Gender Role Free Contra Dance for the LGBTIQA Community &amp; Friends. All dances are taught and beginners are welcomed. Come early for best instruction.
+
+Caller Dana Dwinell Yardley
+Band Linda Henry &amp; Shirley White
+Time 7-10 PM
+Cost $7-$10 sliding scale, $5 with student ID
+
+Please bring soft-soled non street shoes to protect the wooden dance floor. Please refrain from wearing perfumes, colognes, and other highly scentd products. All events are smoke, drug and alcohol free.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/01/18">Rainbow Contra Dance</a>
+
+                                <br>
+                                <span class="time">Sat, December 1<br>7:00 PM - 10:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Story Time @ Carnegie] body=[Young children of all ages and their families are invited to come and enjoy stories, crafts, music, activities and snacks, with Karen Wartel.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/05/18">Story Time @ Carnegie</a>
+
+                                <br>
+                                <span class="time">Wed, December 5<br>10:15 AM - 11:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Homeschool Science] body=[Hands-On STEM(Science, Technology, Engineering, Math) activities for homeschoolers of all ages and their caregivers, with Angela or special guest, at Carnegie Library. Registration is required to ensure that we have enough supplies for everyone. Call 413-863-3214 or stop by the library.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/05/18">Homeschool Science</a>
+
+                                <br>
+                                <span class="time">Wed, December 5<br>1:00 PM - 2:30 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Meditation with Tahn] body=[Free fall meditation series with Venerable Tahn Pamuto every Wednesday from September 19 through November 28. Open and free to all.  No prior meditation experience needed.
+...
+Tahn may take dana in the form of food or non-cash items (please ask). You may also make a donation to the hall when you attend, or do consider becoming a sustaining member so we can continue to give space for these kinds of community offerings.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/05/18">Meditation with Tahn</a>
+
+                                <br>
+                                <span class="time">Wed, December 5<br>7:00 PM - 8:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Gentle YOGA] body=[Hello everyone,
+
+I am excited to offer a new gentle morning Yoga class: Yoga for Strength and Stress Relief. We begin next week, on November 8th at the Montague Common Hall.
+
+Thursdays 9:15 - 10:30 AM
+
+This class will benefit complete beginners and advancing yogis alike.  We will focus on building core strength, as well as on unwinding physical and mental tension and overwhelm. No experience or equipment necessary.
+
+HOW TO REGISTER
+You can drop-in, or buy a very flexible bundle of classes. http://www.sunessenceyoga.com/buy-yoga-classes/
+
+Since this is a new class and will run on a trial basis, by buying a bundle of classes, you can show your commitment and ensure longevity of the class. The bundles will work for both the Thursday AM and for the Tuesday 5:30PM Flow classes (as well as for Saturday classes in Amherst). If you already purchased classes - they will work for this one.
+
+Drop me a line through the above website if you have any questions at all.
+
+I look forward to seeing many of you soon!
+
+Nadya&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/06/18">Gentle YOGA</a>
+
+                                <br>
+                                <span class="time">Thu, December 6<br>9:15 AM - 10:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Music &amp; Movement for Kids] body=[This weekly series for young children, with Tom Carroll and Laurie Davidson, will take a turn at the Millers Falls Library September through December. Designed for preschoolers and their caregivers.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/06/18">Music &amp; Movement for Kids</a>
+
+                                <br>
+                                <span class="time">Thu, December 6<br>10:00 AM - 10:45 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Genealogy Gathering] body=[An informal discussion of local family research meets the first Thursday of each month at the Carnegie Library. It is led by Sarah Campbell.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/06/18">Genealogy Gathering</a>
+
+                                <br>
+                                <span class="time">Thu, December 6<br>6:00 PM - 7:45 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Mystery Activity] body=[Children ages 8+ and teens are invited to join us every first Friday for a mystery activity. You won’t know what you’re doing until you get to the Carnegie Library! Some possibilities, crafts, science experiments and tech-tools.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/07/18">Mystery Activity</a>
+
+                                <br>
+                                <span class="time">Fri, December 7<br>3:30 PM - 4:45 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Gingerbread Party] body=[Children of all ages and their caregivers are invited to come make easy gingerbread houses at the Carnegie Library. Candy, graham crackers, and icing will be provided for this fun, free program.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/08/18">Gingerbread Party</a>
+
+                                <br>
+                                <span class="time">Sat, December 8<br>10:30 AM - 12:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Open Mic] body=[Monthly Open Mic, come share or listen!
+
+Details here:
+https://www.facebook.com.montagueCommonHallOpenMic/&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/08/18">Open Mic</a>
+
+                                <br>
+                                <span class="time">Sat, December 8<br>7:30 PM - 10:00 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Story Time @ Carnegie] body=[Young children of all ages and their families are invited to come and enjoy stories, crafts, music, activities and snacks, with Karen Wartel.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/12/18">Story Time @ Carnegie</a>
+
+                                <br>
+                                <span class="time">Wed, December 12<br>10:15 AM - 11:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Homeschool Science] body=[Hands-On STEM(Science, Technology, Engineering, Math) activities for homeschoolers of all ages and their caregivers, with Angela or special guest, at Carnegie Library. Registration is required to ensure that we have enough supplies for everyone. Call 413-863-3214 or stop by the library.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/12/18">Homeschool Science</a>
+
+                                <br>
+                                <span class="time">Wed, December 12<br>1:00 PM - 2:30 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Gentle YOGA] body=[Hello everyone,
+
+I am excited to offer a new gentle morning Yoga class: Yoga for Strength and Stress Relief. We begin next week, on November 8th at the Montague Common Hall.
+
+Thursdays 9:15 - 10:30 AM
+
+This class will benefit complete beginners and advancing yogis alike.  We will focus on building core strength, as well as on unwinding physical and mental tension and overwhelm. No experience or equipment necessary.
+
+HOW TO REGISTER
+You can drop-in, or buy a very flexible bundle of classes. http://www.sunessenceyoga.com/buy-yoga-classes/
+
+Since this is a new class and will run on a trial basis, by buying a bundle of classes, you can show your commitment and ensure longevity of the class. The bundles will work for both the Thursday AM and for the Tuesday 5:30PM Flow classes (as well as for Saturday classes in Amherst). If you already purchased classes - they will work for this one.
+
+Drop me a line through the above website if you have any questions at all.
+
+I look forward to seeing many of you soon!
+
+Nadya&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/13/18">Gentle YOGA</a>
+
+                                <br>
+                                <span class="time">Thu, December 13<br>9:15 AM - 10:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Music &amp; Movement for Kids] body=[This weekly series for young children, with Tom Carroll and Laurie Davidson, will take a turn at the Millers Falls Library September through December. Designed for preschoolers and their caregivers.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/13/18">Music &amp; Movement for Kids</a>
+
+                                <br>
+                                <span class="time">Thu, December 13<br>10:00 AM - 10:45 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Story Time @ Carnegie] body=[Young children of all ages and their families are invited to come and enjoy stories, crafts, music, activities and snacks, with Karen Wartel.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/19/18">Story Time @ Carnegie</a>
+
+                                <br>
+                                <span class="time">Wed, December 19<br>10:15 AM - 11:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Homeschool Science] body=[Hands-On STEM(Science, Technology, Engineering, Math) activities for homeschoolers of all ages and their caregivers, with Angela or special guest, at Carnegie Library. Registration is required to ensure that we have enough supplies for everyone. Call 413-863-3214 or stop by the library.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/19/18">Homeschool Science</a>
+
+                                <br>
+                                <span class="time">Wed, December 19<br>1:00 PM - 2:30 PM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Gentle YOGA] body=[Hello everyone,
+
+I am excited to offer a new gentle morning Yoga class: Yoga for Strength and Stress Relief. We begin next week, on November 8th at the Montague Common Hall.
+
+Thursdays 9:15 - 10:30 AM
+
+This class will benefit complete beginners and advancing yogis alike.  We will focus on building core strength, as well as on unwinding physical and mental tension and overwhelm. No experience or equipment necessary.
+
+HOW TO REGISTER
+You can drop-in, or buy a very flexible bundle of classes. http://www.sunessenceyoga.com/buy-yoga-classes/
+
+Since this is a new class and will run on a trial basis, by buying a bundle of classes, you can show your commitment and ensure longevity of the class. The bundles will work for both the Thursday AM and for the Tuesday 5:30PM Flow classes (as well as for Saturday classes in Amherst). If you already purchased classes - they will work for this one.
+
+Drop me a line through the above website if you have any questions at all.
+
+I look forward to seeing many of you soon!
+
+Nadya&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/20/18">Gentle YOGA</a>
+
+                                <br>
+                                <span class="time">Thu, December 20<br>9:15 AM - 10:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Music &amp; Movement for Kids] body=[This weekly series for young children, with Tom Carroll and Laurie Davidson, will take a turn at the Millers Falls Library September through December. Designed for preschoolers and their caregivers.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/20/18">Music &amp; Movement for Kids</a>
+
+                                <br>
+                                <span class="time">Thu, December 20<br>10:00 AM - 10:45 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Libraries Closed] body=[ &lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/25/18">Libraries Closed</a>
+
+                                <br>
+                                <span class="time">Tue, December 25</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Gentle YOGA] body=[Hello everyone,
+
+I am excited to offer a new gentle morning Yoga class: Yoga for Strength and Stress Relief. We begin next week, on November 8th at the Montague Common Hall.
+
+Thursdays 9:15 - 10:30 AM
+
+This class will benefit complete beginners and advancing yogis alike.  We will focus on building core strength, as well as on unwinding physical and mental tension and overwhelm. No experience or equipment necessary.
+
+HOW TO REGISTER
+You can drop-in, or buy a very flexible bundle of classes. http://www.sunessenceyoga.com/buy-yoga-classes/
+
+Since this is a new class and will run on a trial basis, by buying a bundle of classes, you can show your commitment and ensure longevity of the class. The bundles will work for both the Thursday AM and for the Tuesday 5:30PM Flow classes (as well as for Saturday classes in Amherst). If you already purchased classes - they will work for this one.
+
+Drop me a line through the above website if you have any questions at all.
+
+I look forward to seeing many of you soon!
+
+Nadya&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=12/27/18">Gentle YOGA</a>
+
+                                <br>
+                                <span class="time">Thu, December 27<br>9:15 AM - 10:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Sawmill Run] body=[Annual Sawmill Run
+
+
+
+_________________
+contact: Dobosz&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=01/01/19">Sawmill Run</a>
+
+                                <br>
+                                <span class="time">Tue, January 1</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Libraries Closed] body=[ &lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=01/01/19">Libraries Closed</a>
+
+                                <br>
+                                <span class="time">Tue, January 1</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Story Time @ Carnegie] body=[Young children of all ages and their families are invited to come and enjoy stories, crafts, music, activities and snacks, with Karen Wartel at the Carnegie Library.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Libraries&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=01/02/19">Story Time @ Carnegie</a>
+
+                                <br>
+                                <span class="time">Wed, January 2<br>10:15 AM - 11:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=191">Montague Libraries</a>
+
+                            </div>
+
+                            <div class="content mt-3">
+                                <a class="title" title="cssbody=[ttbdy] cssheader=[tthdr] offsety=[-55] offsetx=[5] header=[Gentle YOGA] body=[Hello everyone,
+
+I am excited to offer a new gentle morning Yoga class: Yoga for Strength and Stress Relief. We begin next week, on November 8th at the Montague Common Hall.
+
+Thursdays 9:15 - 10:30 AM
+
+This class will benefit complete beginners and advancing yogis alike.  We will focus on building core strength, as well as on unwinding physical and mental tension and overwhelm. No experience or equipment necessary.
+
+HOW TO REGISTER
+You can drop-in, or buy a very flexible bundle of classes. http://www.sunessenceyoga.com/buy-yoga-classes/
+
+Since this is a new class and will run on a trial basis, by buying a bundle of classes, you can show your commitment and ensure longevity of the class. The bundles will work for both the Thursday AM and for the Tuesday 5:30PM Flow classes (as well as for Saturday classes in Amherst). If you already purchased classes - they will work for this one.
+
+Drop me a line through the above website if you have any questions at all.
+
+I look forward to seeing many of you soon!
+
+Nadya&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;Montague Common Hall&lt;/strong&gt;]" href="http://www.montaguema.net/calendar.cfm?showcal=0&amp;daterequest=01/03/19">Gentle YOGA</a>
+
+                                <br>
+                                <span class="time">Thu, January 3<br>9:15 AM - 10:30 AM</span>
+
+                                <br><a class="group" href="http://www.montaguema.net/calendar.cfm?gpt=34&amp;g=190">Montague Common Hall</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+</body>
+</html>
