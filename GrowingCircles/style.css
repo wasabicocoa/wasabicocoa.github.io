@@ -107,6 +107,7 @@
   background-size: cover;
   background-position: center center;
 }
+
 /*------------
 --Footer
 -------------*/
@@ -160,6 +161,9 @@
     background: url('site/header-mobile.jpg');
     background-size: cover;
     background-position: center center;
+  }
+  .h-img-mobile {
+    padding: 0;
   }
   .h-img::after {
     border-radius: 0;
