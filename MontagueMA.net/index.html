@@ -265,6 +265,12 @@
         body {
             background-color: #f0f0f0;
         }
+        a {
+          color: #4480FF;
+        }
+        .bg-info {
+          background-color: #4480FF !important;
+        }
         /*--------------------------
         --Acordian
         ---------------------------*/
@@ -288,9 +294,14 @@
         --------------------------*/
         .panel-group a {
             display: block;
+            color: #4480FF;
         }
-        .card-header h4 {
+        .panel-group h4 {
             font-size: 1.2rem;
+            padding: 5px 0;
+        }
+        .panel-group .card-body {
+        	padding-top: 0;
         }
         .sticky-top-2 {
             position: -webkit-sticky;
@@ -383,45 +394,42 @@
                             <div class="form-group">
                                 <input class="form-control mr-2 mb-1" type="text" id="username" placeholder="Enter Username" />
                                 <input class="form-control" type="password" id="password" placeholder="Enter Password" />
-                                <p><a class="text-dark" href="#">Forgot Password or Username?</a></p>
+                                <p><a class="text-light" href="#">Forgot Password or Username?</a></p>
                                 <button class="btn btn-outline-light" type="submit">Submit</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <!-- Accordian -->
-                <div class="panel-group sticky-top-2 mobile-display-no" id="accordion">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                    <span class="glyphicon glyphicon-folder-close">
-                                    </span>Category One
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse show">
-                            <div class="card-body">
-                                    <a href="#">Montague-Palooza</a>
-                                    <a href="#">Local & US Politics</a>
-                                    <a href="#">SoapBox Derby</a>
-                                    <a href="#">Mutton and Mead!</a>
-                                    <a href="#">Buy & Sell & Jobs</a>
-                                    <a href="#">Real Estate</a>
-                                    <a href="#">Local Entertainment</a>
-                                    <a href="#">Restaurant Reviews</a>
-                            </div>
-                        </div>
+                <div class="panel-group sticky-top-2 mobile-display-no card" id="accordion">
+                  <div class="m-2">
+                    <div class="border-bottom">
+                      <h4>
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                              <span class="glyphicon glyphicon-folder-close">
+                              </span>Community
+                          </a>
+                      </h4>
+                      <div id="collapseOne" class="panel-collapse collapse show">
+                          <div class="card-body">
+                                  <a href="#">Montague-Palooza</a>
+                                  <a href="#">Local & US Politics</a>
+                                  <a href="#">SoapBox Derby</a>
+                                  <a href="#">Mutton and Mead!</a>
+                                  <a href="#">Buy & Sell & Jobs</a>
+                                  <a href="#">Real Estate</a>
+                                  <a href="#">Local Entertainment</a>
+                                  <a href="#">Restaurant Reviews</a>
+                          </div>
+                      </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                    <span class="glyphicon glyphicon-th">
-                                    </span>Category Two
-                                </a>
-                            </h4>
-                        </div>
+                    <div class="border-bottom">
+                        <h4>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                <span class="glyphicon glyphicon-th">
+                                </span>Media
+                            </a>
+                        </h4>
                         <div id="collapseTwo" class="panel-collapse collapse">
                             <div class="card-body">
                                     <a href="#">MCTV </a>
@@ -429,83 +437,76 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                    <span class="glyphicon glyphicon-user">
-                                    </span>Category Three
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse">
-                            <div class="card-body">
-                                    <a href="#">Shea Theater </a>
-                                    <a href="#">Montague Common Hall </a>
-                                    <a href="#">TF RiverCulture </a>
-                                    <a href="#">Business Association </a>
-                                    <a href="#">The Brick House </a>
-                                    <a href="#">Discovery Center </a>
-                                    <a href="#">Senior Center </a>
-                                    <a href="#">Historical Society </a><
-                            </div>
-                        </div>
+                    <div class="border-bottom">
+                      <h4 class="card-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                              <span class="glyphicon glyphicon-user">
+                              </span>Entertainment
+                          </a>
+                      </h4>
+                      <div id="collapseThree" class="panel-collapse collapse">
+                          <div class="card-body">
+                                  <a href="#">Shea Theater </a>
+                                  <a href="#">Montague Common Hall </a>
+                                  <a href="#">TF RiverCulture </a>
+                                  <a href="#">Business Association </a>
+                                  <a href="#">The Brick House </a>
+                                  <a href="#">Discovery Center </a>
+                                  <a href="#">Senior Center </a>
+                                  <a href="#">Historical Society </a>
+                          </div>
+                      </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                                    <span class="glyphicon glyphicon-file">
-                                    </span>Category Four
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse">
-                            <div class="card-body">
-                                    <a href="#">Transition Montague </a>
-                                    <a href="#">Backyard Gardeners </a>
-                                    <a href="#">Local Farms </a>
-                                    <a href="#">Farmers Markets </a>
-                                    <a href="#">Clean Energy </a>
-                            </div>
-                        </div>
+                    <div class="border-bottom">
+                      <h4 class="card-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                              <span class="glyphicon glyphicon-file">
+                              </span>For Farmers
+                          </a>
+                      </h4>
+                      <div id="collapseFour" class="panel-collapse collapse">
+                          <div class="card-body">
+                                  <a href="#">Transition Montague </a>
+                                  <a href="#">Backyard Gardeners </a>
+                                  <a href="#">Local Farms </a>
+                                  <a href="#">Farmers Markets </a>
+                                  <a href="#">Clean Energy </a>
+                          </div>
+                      </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                                    <span class="glyphicon glyphicon-file">
-                                    </span>Category Five
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseFive" class="panel-collapse collapse">
-                            <div class="card-body">
-                                    <a href="#">Town Issues </a>
-                                    <a href="#">Gill Montague School </a>
-                                    <a href="#">Policy Wonk Place </a>
-                                    <a href="#">Montague Libraries </a>
-                                    <a href="#">Parks & Rec </a>
-                                    <a href="#">Cable Advisory </a>
-                            </div>
-                        </div>
+                    <div class="border-bottom">
+                      <h4 class="card-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                              <span class="glyphicon glyphicon-file">
+                              </span>The Town
+                          </a>
+                      </h4>
+                      <div id="collapseFive" class="panel-collapse collapse">
+                          <div class="card-body">
+                                  <a href="#">Town Issues </a>
+                                  <a href="#">Gill Montague School </a>
+                                  <a href="#">Policy Wonk Place </a>
+                                  <a href="#">Montague Libraries </a>
+                                  <a href="#">Parks & Rec </a>
+                                  <a href="#">Cable Advisory </a>
+                          </div>
+                      </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-                                    <span class="glyphicon glyphicon-file">
-                                    </span>Category Six
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseSix" class="panel-collapse collapse">
-                            <div class="card-body">
-                                    <a href="#">Churches & Spiritual </a>
-                                    <a href="#">Montague Potlucks </a>
-                            </div>
-                        </div>
+                    <div>
+                      <h4 class="card-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                              <span class="glyphicon glyphicon-file">
+                              </span>Miscellaneous
+                          </a>
+                      </h4>
+                      <div id="collapseSix" class="panel-collapse collapse">
+                          <div class="card-body">
+                                  <a href="#">Churches & Spiritual </a>
+                                  <a href="#">Montague Potlucks </a>
+                          </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
             </div>
             <!-- Feed -->
@@ -1243,7 +1244,7 @@
                     </div>
                 </div>
                 <div class="card mt-3">
-                    <div class="card-body bg-info text-light">
+                    <div class="card-body bg-info text-light text-center">
                         <a class="text-light" href="http://www.montaguema.net/meta.cfm?gpt=34&amp;mt=56">About Us</a> ·
                         <a class="text-light" href="http://www.montaguema.net/meta.cfm?gpt=34&amp;mt=58">Help!</a> ·
                         <a class="text-light" href="http://www.montaguema.net/meta.cfm?gpt=34&amp;mt=75">Local websites</a> ·
